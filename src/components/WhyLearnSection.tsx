@@ -63,11 +63,11 @@ export const WhyLearnSection: React.FC<WhyLearnSectionProps> = ({
 
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
-  // Cycle through the 5 cards one by one every 1.5 seconds (1500ms)
+  // Cycle through the 5 cards one by one every 0.8 seconds (800ms)
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % features.length);
-    }, 1500);
+    }, 800);
 
     return () => clearInterval(interval);
   }, [features.length]);
@@ -113,7 +113,7 @@ export const WhyLearnSection: React.FC<WhyLearnSectionProps> = ({
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
-        {/* Left 5 Feature Cards Layout with 1.5s Animation */}
+        {/* Left 5 Feature Cards Layout with 0.8s Animation */}
         <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
           {features.map((feat, idx) => {
             const isActive = activeIndex === idx;
@@ -125,9 +125,9 @@ export const WhyLearnSection: React.FC<WhyLearnSectionProps> = ({
                 layout
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: idx * 0.1 }}
+                transition={{ duration: 0.3, delay: idx * 0.05 }}
                 onClick={() => setActiveIndex(idx)}
-                className={`cursor-pointer rounded-2xl p-4 sm:p-5 transition-all duration-500 border ${
+                className={`cursor-pointer rounded-2xl p-4 sm:p-5 transition-all duration-300 border ${
                   isLastSpan ? 'sm:col-span-2' : 'col-span-1'
                 } ${
                   isActive

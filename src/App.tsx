@@ -17,6 +17,7 @@ import { EnrollmentModal } from './components/EnrollmentModal';
 import { SeoAdsInspectorModal } from './components/SeoAdsInspectorModal';
 import { VideoPreviewModal } from './components/VideoPreviewModal';
 import { ConsultationModal } from './components/ConsultationModal';
+import { LoginModal } from './components/LoginModal';
 import { StickyEnrollBar } from './components/StickyEnrollBar';
 
 export default function App() {
@@ -24,19 +25,27 @@ export default function App() {
   const [isSeoOpen, setIsSeoOpen] = useState(false);
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
+  const [loginModalState, setLoginModalState] = useState<{ isOpen: boolean; tab: 'course' | 'client' }>({
+    isOpen: false,
+    tab: 'course',
+  });
 
   const handleEnrollClick = () => setIsEnrollOpen(true);
   const handleSeoClick = () => setIsSeoOpen(true);
   const handleVideoClick = () => setIsVideoOpen(true);
   const handleConsultationClick = () => setIsConsultationOpen(true);
+  const handleLoginClick = (tab: 'course' | 'client' = 'course') => {
+    setLoginModalState({ isOpen: true, tab });
+  };
 
   return (
     <div className="min-h-screen bg-[#FDFBF7] text-gray-900 font-sans selection:bg-amber-200 selection:text-amber-900">
       
-      {/* 1. Header with Urgency Ticker & Nav */}
+      {/* 1. Header with Logo, Phone Numbers, Login Buttons & Centered Navigation */}
       <Header 
         onEnrollClick={handleEnrollClick}
         onOpenSeoScorecard={handleSeoClick}
+        onOpenLoginModal={handleLoginClick}
       />
 
       {/* Main Content Sections */}
@@ -114,6 +123,12 @@ export default function App() {
       <ConsultationModal 
         isOpen={isConsultationOpen}
         onClose={() => setIsConsultationOpen(false)}
+      />
+
+      <LoginModal 
+        isOpen={loginModalState.isOpen}
+        onClose={() => setLoginModalState(prev => ({ ...prev, isOpen: false }))}
+        defaultTab={loginModalState.tab}
       />
 
     </div>

@@ -1,70 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { CURRICULUM_20_PARTS } from '../data/courseData';
-import { BookOpen, Check, Search, Download } from 'lucide-react';
+import { Check } from 'lucide-react';
 
 interface CurriculumTableProps {
   onEnrollClick: () => void;
 }
 
 export const CurriculumTable: React.FC<CurriculumTableProps> = ({ onEnrollClick }) => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<string>('All');
-
-  const categories = ['All', 'Foundations', 'Kundli', 'Diagnosis', 'Tarpan', 'Rituals', 'Remedies', 'Special Vidhi'];
-
-  const filteredItems = CURRICULUM_20_PARTS.filter(item => {
-    const matchesSearch = item.title.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = selectedCategory === 'All' || item.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  });
-
-  const col1 = filteredItems.filter((_, idx) => idx % 2 === 0);
-  const col2 = filteredItems.filter((_, idx) => idx % 2 === 1);
+  const col1 = CURRICULUM_20_PARTS.filter((_, idx) => idx % 2 === 0);
+  const col2 = CURRICULUM_20_PARTS.filter((_, idx) => idx % 2 === 1);
 
   return (
     <section id="curriculum" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       
       {/* Section Header */}
-      <div className="text-center max-w-3xl mx-auto mb-10">
-        <span className="text-xs sm:text-sm font-bold tracking-widest text-amber-700 uppercase">
-          COURSE CURRICULUM
-        </span>
-        <h2 className="font-serif text-3xl sm:text-4xl font-bold text-gray-900 mt-1 mb-2">
-          Complete 20-Part Shradh Vidhi Syllabus
+      <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
+        <h2 className="font-serif text-3xl sm:text-4xl font-bold text-gray-900 uppercase tracking-wide">
+          Table of Content
         </h2>
-        <p className="text-sm sm:text-base text-gray-600">
-          Complete 20-part breakdown of Pitru Paksh, Ancestral Karma, Pitru Dosh Nivaran & Shradh Vidhi
-        </p>
-
-        {/* Quick Search & Category Filters */}
-        <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
-          <div className="relative w-full max-w-md">
-            <Search className="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
-            <input
-              type="text"
-              placeholder="Search topics (e.g., Tarpan, Kundli, Mantras, Pind Daan)..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 text-xs sm:text-sm rounded-xl border border-amber-200 bg-white focus:outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500"
-            />
-          </div>
-
-          <div className="flex items-center gap-1.5 overflow-x-auto w-full sm:w-auto pb-1 sm:pb-0 scrollbar-none">
-            {categories.slice(0, 5).map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setSelectedCategory(cat)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors ${
-                  selectedCategory === cat
-                    ? 'bg-amber-800 text-white'
-                    : 'bg-white text-gray-700 hover:bg-amber-50 border border-amber-200/80'
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-        </div>
       </div>
 
       {/* 20-Part Grid Card Layout (Matching Screenshot) */}

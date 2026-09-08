@@ -27,7 +27,7 @@ export const Header: React.FC<HeaderProps> = ({
     { label: 'About', href: '#whylearn' },
     { label: 'Courses', href: '#curriculum' },
     { label: 'Products', href: '#curriculum' },
-    { label: 'Reports', href: '#quiz' },
+    { label: 'Reports', href: '#certificate' },
     { label: 'Services', href: '#whylearn' },
     { label: 'Contact', href: '#footer' },
     { label: 'Blogs', href: '#faq' },

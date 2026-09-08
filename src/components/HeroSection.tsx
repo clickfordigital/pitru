@@ -135,7 +135,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onEnrollClick, onOpenV
               {/* Trust Subtext */}
               <div className="flex items-center gap-2 text-[11px] text-gray-600">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                <span>Instant Access • Lifetime Validity • 100% Authentic Shastric Content</span>
+                <span>Instant Access • 1 Year Access • 100% Authentic Shastric Content</span>
               </div>
             </div>
 

@@ -4,7 +4,6 @@ import { HeroSection } from './components/HeroSection';
 import { StatsBar } from './components/StatsBar';
 import { CurriculumTable } from './components/CurriculumTable';
 import { WhyLearnSection } from './components/WhyLearnSection';
-import { PitruDoshQuiz } from './components/PitruDoshQuiz';
 import { LearningJourney } from './components/LearningJourney';
 import { TestimonialsSection } from './components/TestimonialsSection';
 import { CertificateSection } from './components/CertificateSection';
@@ -70,12 +69,7 @@ export default function App() {
           onTalkToTeamClick={handleConsultationClick}
         />
 
-        {/* 6. Interactive 60-Second Pitru Dosh & Ancestral Rin Assessment Tool */}
-        <PitruDoshQuiz 
-          onEnrollClick={handleEnrollClick}
-        />
-
-        {/* 7. 7-Step Learning Journey Flow */}
+        {/* 6. Course Deliverables Flow */}
         <LearningJourney />
 
         {/* 8. Student Testimonials */}

@@ -68,7 +68,7 @@ export const EnrollmentModal: React.FC<EnrollmentModalProps> = ({ isOpen, onClos
               </div>
               <div className="text-right text-[11px] text-gray-600">
                 <span className="text-emerald-700 font-bold block">✓ You Save ₹1,500</span>
-                <span>Lifetime Access</span>
+                <span>1 Year Access</span>
               </div>
             </div>
 

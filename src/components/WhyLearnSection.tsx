@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { 
   Award, 
   CheckCircle2, 
-  Infinity as InfinityIcon, 
+  Calendar, 
   BookOpen, 
   HelpCircle, 
   Lock, 
@@ -26,38 +26,38 @@ export const WhyLearnSection: React.FC<WhyLearnSectionProps> = ({
   const features = [
     { 
       id: '01',
-      icon: <Award className="w-6 h-6 text-amber-600" />, 
-      title: '17 Years Experience', 
+      icon: <Award className="w-6 h-6 sm:w-7 sm:h-7" />, 
+      title: '17+ Years Experience', 
       subtitle: 'Authentic Vedic Mastery',
-      desc: 'Over 17+ years deciphering Vedic texts, horoscope ancestral debts, and guiding 50,000+ families.'
+      desc: 'Over 17+ years deciphering Vedic texts, horoscope ancestral debts, and guiding 50,000+ families with proven Shastric remedies.'
     },
     { 
       id: '02',
-      icon: <CheckCircle2 className="w-6 h-6 text-amber-600" />, 
+      icon: <CheckCircle2 className="w-6 h-6 sm:w-7 sm:h-7" />, 
       title: 'Certified Course', 
       subtitle: 'Recognized Credential',
-      desc: 'Earn a verified Certificate of Completion acknowledging your proficiency in Shradh Vidhi & Tarpan.'
+      desc: 'Earn an official verified Certificate of Completion acknowledging your proficiency in authentic Shradh Vidhi & Tarpan.'
     },
     { 
       id: '03',
-      icon: <InfinityIcon className="w-6 h-6 text-amber-600" />, 
-      title: 'Lifetime Access', 
-      subtitle: 'Every Shradh Season',
-      desc: 'Re-watch video lessons, review remedial mantras, and download ritual updates year after year.'
+      icon: <Calendar className="w-6 h-6 sm:w-7 sm:h-7" />, 
+      title: '1 Year Complete Access', 
+      subtitle: 'Full 365-Day Access',
+      desc: 'Re-watch video lessons, review remedial mantras, and download ritual guides at your own pace anytime throughout the year.'
     },
     { 
       id: '04',
-      icon: <BookOpen className="w-6 h-6 text-amber-600" />, 
-      title: 'Practical Learning', 
+      icon: <BookOpen className="w-6 h-6 sm:w-7 sm:h-7" />, 
+      title: 'Practical Home Learning', 
       subtitle: 'Step-by-Step at Home',
       desc: 'Clear DIY instructions with precise Sanskrit mantras, Mudra diagrams, and zero expensive priests required.'
     },
     { 
       id: '05',
-      icon: <HelpCircle className="w-6 h-6 text-amber-600" />, 
+      icon: <HelpCircle className="w-6 h-6 sm:w-7 sm:h-7" />, 
       title: 'Live Doubt Sessions', 
       subtitle: 'Direct Faculty Support',
-      desc: 'Get your family gotra, tithi calculation, and ancestral questions clarified directly in live Q&A sessions.'
+      desc: 'Get your family gotra, tithi calculations, and ancestral questions clarified directly in live interactive Q&A sessions.'
     },
   ];
 
@@ -84,7 +84,7 @@ export const WhyLearnSection: React.FC<WhyLearnSectionProps> = ({
           Why Learn From Acharya Ganesh?
         </h2>
         <p className="text-sm sm:text-base text-gray-600">
-          Get authentic knowledge, practical training, and lifetime support from India's most trusted Vedic guide.
+          Get authentic knowledge, practical training, and dedicated guidance from India's most trusted Vedic guide.
         </p>
 
         {/* 1.5-second interactive animation indicator tracker */}
@@ -111,10 +111,10 @@ export const WhyLearnSection: React.FC<WhyLearnSectionProps> = ({
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
         
         {/* Left 5 Feature Cards Layout with 0.8s Animation */}
-        <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+        <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
           {features.map((feat, idx) => {
             const isActive = activeIndex === idx;
             const isLastSpan = idx === 4; // 5th card spans full width for perfect symmetry
@@ -127,51 +127,88 @@ export const WhyLearnSection: React.FC<WhyLearnSectionProps> = ({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: idx * 0.05 }}
                 onClick={() => setActiveIndex(idx)}
-                className={`cursor-pointer rounded-2xl p-4 sm:p-5 transition-all duration-300 border ${
+                className={`cursor-pointer rounded-2xl p-5 sm:p-6 transition-all duration-300 border flex flex-col justify-between ${
                   isLastSpan ? 'sm:col-span-2' : 'col-span-1'
                 } ${
                   isActive
-                    ? 'bg-gradient-to-br from-[#FFFDF9] via-[#FFF8EC] to-[#FEF3D6] border-amber-500 shadow-lg shadow-amber-900/10 ring-2 ring-amber-400/50 scale-[1.02]'
-                    : 'bg-white border-amber-200/80 shadow-sm hover:border-amber-300 hover:bg-amber-50/30'
+                    ? 'bg-gradient-to-br from-[#FFFDF9] via-[#FFF8EC] to-[#FEF3D6] border-amber-500 shadow-xl shadow-amber-900/10 ring-2 ring-amber-400/60 scale-[1.02]'
+                    : 'bg-white border-amber-200/90 shadow-sm hover:border-amber-300 hover:bg-amber-50/40 hover:shadow-md'
                 }`}
               >
-                <div className="flex items-start gap-3.5">
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 transition-colors ${
-                    isActive 
-                      ? 'bg-amber-600 text-white shadow-md shadow-amber-700/30' 
-                      : 'bg-amber-50 border border-amber-200/70 text-amber-700'
-                  }`}>
-                    {React.cloneElement(feat.icon, {
-                      className: `w-6 h-6 ${isActive ? 'text-white' : 'text-amber-700'}`
-                    })}
-                  </div>
+                {isLastSpan ? (
+                  /* 5th Card: Full-width Horizontal Layout */
+                  <div className="sm:flex sm:items-start sm:gap-5">
+                    <div className={`w-13 h-13 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center shrink-0 mb-3 sm:mb-0 transition-all shadow-sm ${
+                      isActive 
+                        ? 'bg-amber-600 text-white shadow-amber-700/30' 
+                        : 'bg-gradient-to-br from-amber-50 to-amber-100/70 border border-amber-200/80 text-amber-800'
+                    }`}>
+                      {React.cloneElement(feat.icon, {
+                        className: `w-6 h-6 sm:w-7 sm:h-7 ${isActive ? 'text-white' : 'text-amber-800'}`
+                      })}
+                    </div>
 
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between gap-1 mb-0.5">
-                      <h3 className="text-sm sm:text-base font-bold text-gray-900 truncate">
-                        {feat.title}
-                      </h3>
-                      <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide shrink-0 ${
+                    <div className="flex-1 min-w-0">
+                      <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+                        <h3 className="text-base sm:text-lg font-bold text-gray-900 leading-snug">
+                          {feat.title}
+                        </h3>
+                        <span className={`text-[10px] sm:text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shrink-0 ${
+                          isActive 
+                            ? 'bg-amber-600 text-white shadow-xs' 
+                            : 'bg-amber-100 text-amber-900 border border-amber-200/80'
+                        }`}>
+                          {feat.subtitle}
+                        </span>
+                      </div>
+
+                      <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                        {feat.desc}
+                      </p>
+                    </div>
+                  </div>
+                ) : (
+                  /* Cards 1-4: Spacious Vertical Stack Layout with 100% Unclipped Text */
+                  <div>
+                    {/* Header Row: Icon + Subtitle Badge */}
+                    <div className="flex items-center justify-between gap-2 mb-3.5 sm:mb-4">
+                      <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center shrink-0 transition-all shadow-sm ${
+                        isActive 
+                          ? 'bg-amber-600 text-white shadow-amber-700/30' 
+                          : 'bg-gradient-to-br from-amber-50 to-amber-100/70 border border-amber-200/80 text-amber-800'
+                      }`}>
+                        {React.cloneElement(feat.icon, {
+                          className: `w-6 h-6 sm:w-7 sm:h-7 ${isActive ? 'text-white' : 'text-amber-800'}`
+                        })}
+                      </div>
+
+                      <span className={`text-[10px] sm:text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shrink-0 ${
                         isActive 
                           ? 'bg-amber-600 text-white shadow-xs' 
-                          : 'bg-amber-100/70 text-amber-800'
+                          : 'bg-amber-100 text-amber-900 border border-amber-200/80'
                       }`}>
                         {feat.subtitle}
                       </span>
                     </div>
 
-                    <p className="text-xs text-gray-600 leading-relaxed mt-1">
+                    {/* Title: Full Width, Never Truncated */}
+                    <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 leading-snug">
+                      {feat.title}
+                    </h3>
+
+                    {/* Description: Generous Line Height and Clear Readability */}
+                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                       {feat.desc}
                     </p>
                   </div>
-                </div>
+                )}
               </motion.div>
             );
           })}
         </div>
 
         {/* Right Card: Need Personal Guidance Before Joining? */}
-        <div className="lg:col-span-5 bg-gradient-to-br from-[#FFF9EE] to-[#F7ECD8] rounded-2xl p-6 sm:p-7 border border-amber-300/80 shadow-md space-y-5">
+        <div className="lg:col-span-5 bg-gradient-to-br from-[#FFF9EE] to-[#F7ECD8] rounded-2xl p-6 sm:p-7 border border-amber-300/80 shadow-md flex flex-col justify-between space-y-6">
           
           {/* Header pill with real avatar */}
           <div className="flex items-center gap-3">

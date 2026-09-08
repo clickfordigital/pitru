@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, Users, Video, Star, Infinity } from 'lucide-react';
+import { Award, Users, Video, Star, Calendar, Infinity } from 'lucide-react';
 import { STATS } from '../data/courseData';
 
 export const StatsBar: React.FC = () => {
@@ -9,6 +9,7 @@ export const StatsBar: React.FC = () => {
       case 'Users': return <Users className="w-6 h-6 text-amber-600" />;
       case 'Video': return <Video className="w-6 h-6 text-amber-600" />;
       case 'Star': return <Star className="w-6 h-6 text-amber-600 fill-amber-500/20" />;
+      case 'Calendar': return <Calendar className="w-6 h-6 text-amber-600" />;
       case 'Infinity': return <Infinity className="w-6 h-6 text-amber-600" />;
       default: return <Award className="w-6 h-6 text-amber-600" />;
     }

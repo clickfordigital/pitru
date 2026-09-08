@@ -5,7 +5,7 @@ export const STATS = [
   { value: '50,000+', label: 'Happy Students', icon: 'Users' },
   { value: '100+', label: 'Video Lessons', icon: 'Video' },
   { value: '4.9/5', label: 'Google Rating', icon: 'Star' },
-  { value: 'Lifetime', label: 'Access to Material', icon: 'Infinity' },
+  { value: '1 Year', label: 'Access to Material', icon: 'Calendar' },
 ];
 
 export const CURRICULUM_20_PARTS: CurriculumItem[] = [
@@ -224,7 +224,7 @@ export const FAQS: FaqItem[] = [
     id: 'faq-4',
     category: 'Course Access',
     question: 'What is the duration of the course and how long do I have access?',
-    answer: 'The course includes 20+ hours of structured video lessons across 8 comprehensive modules, plus live Q&A sessions. You receive lifetime access to all course recordings, downloadable guides, and future annual Shradh updates on both web and mobile.'
+    answer: 'The course includes 20+ hours of structured video lessons across 8 comprehensive modules, plus live Q&A sessions. You receive 1 year access to all course recordings, downloadable guides, and course updates on both web and mobile.'
   },
   {
     id: 'faq-5',

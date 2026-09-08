@@ -34,7 +34,7 @@ export const FinalCtaBanner: React.FC<FinalCtaBannerProps> = ({
                 <span className="text-amber-900">Acharya Ganesh</span>
               </h2>
               <p className="text-sm sm:text-base text-gray-800 max-w-lg leading-relaxed">
-                Clear ancestral debts, bring peace to your departed elders, and unlock generational harmony. Get instant lifetime access to the complete Pitru Paksh video course & guidebooks.
+                Clear ancestral debts, bring peace to your departed elders, and unlock generational harmony. Get instant 1 year access to the complete Pitru Paksh video course & guidebooks.
               </p>
             </div>
 
@@ -67,7 +67,7 @@ export const FinalCtaBanner: React.FC<FinalCtaBannerProps> = ({
 
             <div className="flex items-center gap-2 text-xs text-gray-700 font-medium">
               <ShieldCheck className="w-4 h-4 text-emerald-700 shrink-0" />
-              <span>100% Shastric Authenticity • Lifetime Video Access • Verifiable Certificate</span>
+              <span>100% Shastric Authenticity • 1 Year Video Access • Verifiable Certificate</span>
             </div>
           </div>
 

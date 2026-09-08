@@ -133,7 +133,7 @@ export const SeoAdsInspectorModal: React.FC<SeoAdsInspectorModalProps> = ({ isOp
                 <div className="flex flex-wrap gap-2 pt-1 text-[11px] text-gray-600">
                   <span className="bg-gray-100 px-2 py-0.5 rounded">17+ Yrs Experience</span>
                   <span className="bg-gray-100 px-2 py-0.5 rounded">National TV Astrologer</span>
-                  <span className="bg-gray-100 px-2 py-0.5 rounded">Instant Lifetime Access</span>
+                  <span className="bg-gray-100 px-2 py-0.5 rounded">Instant 1 Year Access</span>
                   <span className="bg-gray-100 px-2 py-0.5 rounded">Verifiable Certificate</span>
                 </div>
               </div>

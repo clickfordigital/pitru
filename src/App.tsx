@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
 import { StatsBar } from './components/StatsBar';
+import { VideoIntroSection } from './components/VideoIntroSection';
 import { CurriculumTable } from './components/CurriculumTable';
 import { WhyLearnSection } from './components/WhyLearnSection';
 import { LearningJourney } from './components/LearningJourney';
@@ -9,7 +10,6 @@ import { TestimonialsSection } from './components/TestimonialsSection';
 import { CertificateSection } from './components/CertificateSection';
 import { FaqSection } from './components/FaqSection';
 import { FinalCtaBanner } from './components/FinalCtaBanner';
-import { Footer } from './components/Footer';
 
 // Interactive Overlays
 import { EnrollmentModal } from './components/EnrollmentModal';
@@ -72,6 +72,9 @@ export default function App() {
         {/* 6. Course Deliverables Flow */}
         <LearningJourney />
 
+        {/* 7. Course Orientation Video Session with Mentor Hanish Bagga */}
+        <VideoIntroSection />
+
         {/* 8. Student Testimonials */}
         <TestimonialsSection />
 
@@ -91,10 +94,7 @@ export default function App() {
         />
       </main>
 
-      {/* 13. Comprehensive Academy Footer */}
-      <Footer onEnrollClick={handleEnrollClick} />
-
-      {/* 14. Floating Sticky Bottom Bar on Scroll */}
+      {/* Floating Sticky Bottom Bar on Scroll */}
       <StickyEnrollBar onEnrollClick={handleEnrollClick} />
 
       {/* Modals & Popups */}

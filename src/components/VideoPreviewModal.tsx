@@ -38,9 +38,10 @@ export const VideoPreviewModal: React.FC<VideoPreviewModalProps> = ({
         <div className="p-6 space-y-5">
           <div className="relative aspect-video rounded-2xl overflow-hidden bg-black border border-amber-500/30 flex flex-col items-center justify-center group shadow-inner">
             <img
-              src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80"
-              alt="Acharya Ganesh Pitru Paksh Overview"
-              className="w-full h-full object-cover filter brightness-50 group-hover:scale-105 transition-transform duration-500"
+              src="/acharya-ganesh-pitru-paksh.jpg"
+              alt="Mentor Hanish Bagga Pitru Paksh Overview"
+              className="w-full h-full object-cover object-top filter brightness-75 group-hover:scale-105 transition-transform duration-500"
+              referrerPolicy="no-referrer"
             />
             
             {/* Play Button */}
@@ -51,7 +52,7 @@ export const VideoPreviewModal: React.FC<VideoPreviewModalProps> = ({
                 </div>
               </div>
               <span className="mt-3 text-xs font-bold text-amber-200 tracking-wider uppercase bg-black/70 px-3 py-1 rounded-full border border-amber-500/30">
-                Course Walkthrough by Acharya Ganesh (3:45 mins)
+                Course Orientation by Mentor Hanish Bagga (4:32 mins)
               </span>
             </div>
 

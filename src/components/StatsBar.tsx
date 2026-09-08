@@ -16,7 +16,7 @@ export const StatsBar: React.FC = () => {
   };
 
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-2 pb-14">
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-1 pb-7 sm:pb-8">
       <div className="grid grid-cols-2 md:grid-cols-5 gap-3 sm:gap-4">
         {STATS.map((stat, idx) => (
           <div

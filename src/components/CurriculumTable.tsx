@@ -11,17 +11,17 @@ export const CurriculumTable: React.FC<CurriculumTableProps> = ({ onEnrollClick 
   const col2 = CURRICULUM_20_PARTS.filter((_, idx) => idx % 2 === 1);
 
   return (
-    <section id="curriculum" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="curriculum" className="py-6 sm:py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       
       {/* Section Header */}
-      <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
+      <div className="text-center max-w-3xl mx-auto mb-5 sm:mb-6">
         <h2 className="font-serif text-3xl sm:text-4xl font-bold text-gray-900 uppercase tracking-wide">
           Table of Content
         </h2>
       </div>
 
       {/* 20-Part Grid Card Layout (Matching Screenshot) */}
-      <div className="bg-white rounded-2xl p-4 sm:p-8 border border-amber-200/90 shadow-sm max-w-5xl mx-auto">
+      <div className="bg-white rounded-2xl p-4 sm:p-6 border border-amber-200/90 shadow-sm max-w-5xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
           
           {/* Column 1 (Odd items / Left column) */}

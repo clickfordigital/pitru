@@ -76,7 +76,7 @@ export default function App() {
         <TestimonialsSection />
 
         {/* 9. Certificate Preview & FAQ Section */}
-        <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
+        <section className="py-6 sm:py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-8">
           {/* Certificate Showcase */}
           <CertificateSection onEnrollClick={handleEnrollClick} />
 

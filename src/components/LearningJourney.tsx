@@ -143,10 +143,10 @@ export const LearningJourney: React.FC = () => {
     <section 
       ref={sectionRef} 
       id="course-features" 
-      className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
+      className="py-6 sm:py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
     >
       {/* Section Header */}
-      <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+      <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
         <span className="text-xs sm:text-sm font-bold tracking-widest text-amber-700 uppercase">
           COURSE DELIVERABLES
         </span>

@@ -11,8 +11,8 @@ export const FinalCtaBanner: React.FC<FinalCtaBannerProps> = ({
   onConsultationClick 
 }) => {
   return (
-    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <div className="relative rounded-3xl overflow-hidden bg-gradient-to-r from-[#EED5B3] via-[#F4E1C6] to-[#E3C59D] border border-amber-400/80 p-8 sm:p-12 lg:p-14 shadow-xl">
+    <section className="py-6 sm:py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div className="relative rounded-3xl overflow-hidden bg-gradient-to-r from-[#EED5B3] via-[#F4E1C6] to-[#E3C59D] border border-amber-400/80 p-6 sm:p-9 lg:p-10 shadow-xl">
         
         {/* Subtle Om watermarks in background */}
         <div className="absolute -right-6 -bottom-8 text-amber-900/10 font-serif text-[180px] select-none pointer-events-none font-bold">

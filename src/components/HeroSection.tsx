@@ -105,13 +105,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onEnrollClick, onOpenV
           <div className="lg:col-span-7 space-y-2 sm:space-y-2.5">
             
             {/* H1 SEO Main Headline */}
-            <div className="space-y-1">
+            <div>
               <h1 className="font-serif text-lg sm:text-xl lg:text-[1.45rem] xl:text-[1.65rem] font-bold text-gray-900 leading-snug tracking-tight">
                 Pitru Paksh Course — Ancestral Karma, Pitru Dosh Nivaran & Shradh Vidhi
               </h1>
-              <p className="text-xs sm:text-[13px] text-gray-700 leading-normal max-w-2xl">
-                Dissolve unexplainable life blockages, invoke divine ancestral blessings (<span className="font-semibold text-amber-950">Pitru Ashirwad</span>), and master authentic Shradh, Tarpan, and Pind Daan rituals at home with complete Shastric precision.
-              </p>
             </div>
 
             {/* Price Row */}

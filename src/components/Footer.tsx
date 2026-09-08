@@ -19,9 +19,9 @@ export const Footer: React.FC<FooterProps> = ({ onEnrollClick }) => {
   };
 
   return (
-    <footer className="bg-[#0A0D12] text-white border-t border-amber-500/20 pt-16 pb-12 px-4 sm:px-6 lg:px-8">
+    <footer className="bg-[#0A0D12] text-white border-t border-amber-500/20 pt-10 pb-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 pb-12 border-b border-gray-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 pb-8 border-b border-gray-800">
           
           {/* Column 1: Brand & Bio */}
           <div className="space-y-4">

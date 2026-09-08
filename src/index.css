@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  h1, h2, h3, .font-serif-heading {
+    font-family: 'Cinzel', serif;
+  }
+}
+
+.vedic-gold-gradient {
+  background: linear-gradient(135deg, #FFDF80 0%, #D4AF37 50%, #996515 100%);
+}
+
+.vedic-card-shadow {
+  box-shadow: 0 10px 30px -5px rgba(212, 175, 55, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.04);
+}
+
+.vedic-dark-card-shadow {
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.6), 0 0 25px 2px rgba(212, 175, 55, 0.12);
+}
+

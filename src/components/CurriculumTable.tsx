@@ -61,20 +61,13 @@ export const CurriculumTable: React.FC<CurriculumTableProps> = ({ onEnrollClick 
         </div>
 
         {/* Bottom Curriculum Callout */}
-        <div className="mt-8 pt-6 border-t border-amber-100 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600">
-            <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-            <span>Includes 100+ Shastric Sanskrit mantras, Mudra diagrams & Audio recordings.</span>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <button
-              onClick={onEnrollClick}
-              className="cursor-pointer px-6 py-2.5 rounded-xl bg-amber-800 hover:bg-amber-900 text-white font-semibold text-xs sm:text-sm transition-colors shadow-sm"
-            >
-              Get Full Access • ₹1,500
-            </button>
-          </div>
+        <div className="mt-8 pt-6 border-t border-amber-100 flex items-center justify-center">
+          <button
+            onClick={onEnrollClick}
+            className="cursor-pointer px-6 py-2.5 rounded-xl bg-amber-800 hover:bg-amber-900 text-white font-semibold text-xs sm:text-sm transition-colors shadow-sm"
+          >
+            Get Full Access • ₹1,500
+          </button>
         </div>
 
       </div>

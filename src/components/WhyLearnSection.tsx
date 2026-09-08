@@ -88,27 +88,21 @@ export const WhyLearnSection: React.FC<WhyLearnSectionProps> = ({
           Get authentic knowledge, practical training, and dedicated guidance from India's most trusted Vedic guide.
         </p>
 
-        {/* 1.5-second interactive animation indicator tracker */}
-        <div className="flex items-center justify-center gap-2 mt-4">
-          <div className="flex items-center gap-1.5 bg-amber-50/80 border border-amber-200/80 px-3 py-1 rounded-full text-xs font-semibold text-amber-900">
-            <Sparkles className="w-3.5 h-3.5 text-amber-600 animate-spin" />
-            <span>Key Pillars ({activeIndex + 1}/5)</span>
-          </div>
-          <div className="flex items-center gap-1">
-            {features.map((_, i) => (
-              <button
-                key={i}
-                type="button"
-                onClick={() => setActiveIndex(i)}
-                aria-label={`Highlight feature ${i + 1}`}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  activeIndex === i 
-                    ? 'w-6 bg-amber-700 shadow-sm' 
-                    : 'w-2 bg-amber-200 hover:bg-amber-300'
-                }`}
-              />
-            ))}
-          </div>
+        {/* Interactive animation indicator tracker */}
+        <div className="flex items-center justify-center gap-1.5 mt-4">
+          {features.map((_, i) => (
+            <button
+              key={i}
+              type="button"
+              onClick={() => setActiveIndex(i)}
+              aria-label={`Highlight feature ${i + 1}`}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                activeIndex === i 
+                  ? 'w-6 bg-amber-700 shadow-sm' 
+                  : 'w-2 bg-amber-200 hover:bg-amber-300'
+              }`}
+            />
+          ))}
         </div>
       </div>
 
@@ -225,9 +219,6 @@ export const WhyLearnSection: React.FC<WhyLearnSectionProps> = ({
               </div>
               <div className="font-serif font-bold text-sm text-gray-900">
                 Acharya Ganesh
-              </div>
-              <div className="text-[11px] text-gray-600">
-                Grand Master Astrovastu & Vedic Guide
               </div>
             </div>
           </div>

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
-import { StatsBar } from './components/StatsBar';
 import { CurriculumTable } from './components/CurriculumTable';
 import { WhyLearnSection } from './components/WhyLearnSection';
 import { LearningJourney } from './components/LearningJourney';
@@ -55,10 +54,7 @@ export default function App() {
           onOpenVideoModal={handleVideoClick}
         />
 
-        {/* 3. 5-Column Stats Row */}
-        <StatsBar />
-
-        {/* 4. Course Curriculum - 20-Part Syllabus */}
+        {/* 3. Course Curriculum - 20-Part Syllabus */}
         <CurriculumTable 
           onEnrollClick={handleEnrollClick}
         />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, ArrowRight, Award } from 'lucide-react';
+import { ShieldCheck, ArrowRight } from 'lucide-react';
 
 interface CertificateSectionProps {
   onEnrollClick: () => void;
@@ -20,10 +20,6 @@ export const CertificateSection: React.FC<CertificateSectionProps> = ({ onEnroll
           {/* Left Column: Heading, Glowing Logo & CTA */}
           <div className="lg:col-span-6 space-y-4 text-left">
             <div className="space-y-1.5">
-              <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest text-amber-800 uppercase bg-amber-100/80 px-2.5 py-0.5 rounded-md border border-amber-200/80">
-                <Award className="w-3.5 h-3.5 text-amber-700" />
-                ACCREDITED VEDIC CREDENTIAL
-              </span>
               <h3 className="font-serif text-2xl sm:text-3xl font-bold text-gray-900 leading-tight">
                 Official Certificate of Participation
               </h3>
@@ -51,23 +47,14 @@ export const CertificateSection: React.FC<CertificateSectionProps> = ({ onEnroll
                   />
                 </div>
 
-                {/* Brand accreditation subtext */}
-                <div className="relative space-y-1">
-                  <div className="flex items-center gap-1.5">
-                    <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-amber-900 bg-amber-200/90 px-2 py-0.5 rounded">
-                      Official Seal
-                    </span>
-                    <span className="text-[10px] sm:text-[11px] font-semibold text-emerald-700 flex items-center gap-1">
-                      <ShieldCheck className="w-3.5 h-3.5" />
-                      Authentic
-                    </span>
-                  </div>
-                  <h4 className="font-serif text-sm sm:text-base font-bold text-gray-900 leading-tight">
-                    Acharya Ganesh Academy
+                {/* Mentor Identification */}
+                <div className="relative space-y-0.5">
+                  <span className="text-[11px] sm:text-xs font-bold tracking-wider text-amber-800 uppercase block">
+                    Astro Vastu Expert
+                  </span>
+                  <h4 className="font-serif text-base sm:text-lg font-bold text-gray-900 leading-tight">
+                    Mentor Hanish Bagga
                   </h4>
-                  <p className="text-[11px] sm:text-xs text-gray-600 font-medium leading-snug">
-                    Divine Astro Vastu Sciences LLP • Authenticated Institute
-                  </p>
                 </div>
               </div>
             </div>

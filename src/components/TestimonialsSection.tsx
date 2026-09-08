@@ -65,15 +65,6 @@ export const TestimonialsSection: React.FC = () => {
         ))}
       </div>
 
-      {/* Trust Quote / Stats Strip */}
-      <div className="mt-10 p-4 rounded-xl bg-amber-50/70 border border-amber-200 text-center text-xs sm:text-sm text-amber-950 flex flex-wrap items-center justify-center gap-4 sm:gap-8">
-        <span className="font-semibold">⭐ 4.9 out of 5 Average Rating</span>
-        <span>•</span>
-        <span className="font-semibold">🎓 1,280+ Shradh Course Graduates</span>
-        <span>•</span>
-        <span className="font-semibold">🛡️ 100% Genuine Shastric References</span>
-      </div>
-
     </section>
   );
 };

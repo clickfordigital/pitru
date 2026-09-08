@@ -58,29 +58,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onEnrollClick, onOpenV
           </svg>
         </div>
 
-        {/* Bottom Left Secondary Smoothly Rolling Geometric Yantra */}
-        <div 
-          className="absolute -left-20 -bottom-20 w-72 sm:w-80 h-72 sm:h-80 pointer-events-none select-none -z-0"
-          style={{ animation: 'spin 65s linear infinite reverse' }}
-        >
-          <svg 
-            className="w-full h-full text-amber-600/14" 
-            viewBox="0 0 200 200" 
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            <circle cx="100" cy="100" r="85" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="4 4"/>
-            <circle cx="100" cy="100" r="60" fill="none" stroke="currentColor" strokeWidth="1"/>
-            <circle cx="100" cy="100" r="30" fill="none" stroke="currentColor" strokeWidth="1"/>
-            {[0, 45, 90, 135, 180, 225, 270, 315].map((deg) => (
-              <line key={deg} x1="100" y1="15" x2="100" y2="185" stroke="currentColor" strokeWidth="0.8" transform={`rotate(${deg} 100 100)`}/>
-            ))}
-            {[22.5, 67.5, 112.5, 157.5, 202.5, 247.5, 292.5, 337.5].map((deg) => (
-              <circle key={deg} cx="100" cy="40" r="3" fill="currentColor" transform={`rotate(${deg} 100 100)`}/>
-            ))}
-          </svg>
-        </div>
-
         {/* Sacred Ornamental Vedic Corner Accents with Center Bindu */}
         <div className="absolute top-2.5 left-2.5 flex items-center justify-center pointer-events-none">
           <div className="w-5 h-5 border-t-2 border-l-2 border-amber-600/50 rounded-tl" />
@@ -122,9 +99,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onEnrollClick, onOpenV
               <span className="bg-gradient-to-r from-red-600 to-amber-600 text-white text-[10px] sm:text-xs font-bold px-2 py-0.5 rounded shadow-xs">
                 50% OFF SPECIAL
               </span>
-              <span className="text-xs text-gray-600 font-medium">
-                • 1-Time Payment
-              </span>
             </div>
 
             {/* Course Specifications Card */}
@@ -147,10 +121,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onEnrollClick, onOpenV
                   <span className="font-semibold text-gray-900 min-w-20">Language:</span>
                   <span className="text-gray-700">Easy Hindi & English</span>
                 </div>
-              </div>
-              <div className="pt-1 border-t border-amber-100 flex items-start gap-1.5 text-[10.5px] sm:text-[11px]">
-                <span className="font-semibold text-gray-900 min-w-20 shrink-0">Includes:</span>
-                <span className="text-gray-700">Downloadable Pind Daan Guidebook (PDF) + Remedial Mantras & Audio</span>
               </div>
             </div>
 
@@ -193,12 +163,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onEnrollClick, onOpenV
                   <PlayCircle className="w-4 h-4 text-amber-700" />
                   <span>Curriculum Preview</span>
                 </button>
-              </div>
-
-              {/* Trust Subtext */}
-              <div className="flex items-center gap-2 text-[10px] sm:text-[11px] text-gray-600">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                <span>Instant Access • 1 Year Access • 100% Authentic Shastric Content</span>
               </div>
             </div>
 

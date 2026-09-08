@@ -237,7 +237,7 @@ export const WhyLearnSection: React.FC<WhyLearnSectionProps> = ({
               BOOK CONSULTATION WITH ACHARYA GANESH
             </h3>
             <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
-              Book an exclusive 1-on-1 personal consultation with Acharya Ganesh. Get your birth chart, family gotra, and ancestral debts analyzed with proven Shastric remedies and a personalized spiritual roadmap.
+              Book an exclusive 1-on-1 consultation with Acharya Ganesh. Get Personalized Astrological Guidance on Career, Vastu, Health, and Matchmaking from Astro Vastu expert Hanish Bagga. Book your session today!
             </p>
           </div>
 
@@ -249,16 +249,6 @@ export const WhyLearnSection: React.FC<WhyLearnSectionProps> = ({
               className="w-full h-44 sm:h-52 object-cover object-center transition-transform duration-500 group-hover:scale-105"
               referrerPolicy="no-referrer"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
-            <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-white text-[11px] font-medium drop-shadow-sm">
-              <span className="flex items-center gap-1.5 bg-amber-950/85 backdrop-blur-xs px-2.5 py-1 rounded-md border border-amber-400/40 text-amber-100">
-                <Sparkles className="w-3.5 h-3.5 text-amber-300" />
-                1-on-1 Kundali & Gotra Audit
-              </span>
-              <span className="bg-emerald-950/85 backdrop-blur-xs text-emerald-300 px-2.5 py-1 rounded-md text-[10px] font-bold border border-emerald-400/40">
-                Live Slots Today
-              </span>
-            </div>
           </div>
 
           {/* Value points */}

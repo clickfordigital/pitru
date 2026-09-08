@@ -36,23 +36,23 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className="sticky top-0 z-40 w-full bg-white shadow-sm border-b border-gray-200">
       {/* Top Tier: Logo on Left, Phone Numbers & Login Buttons on Right */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1.5 sm:py-2 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1 sm:py-1.5 flex items-center justify-between">
         
         {/* Left: Official Acharya Ganesh Logo */}
         <a href="#hero" className="flex items-center gap-2 group cursor-pointer" aria-label="Acharya Ganesh Home">
-          <AcharyaGaneshLogo className="h-10 sm:h-12" />
+          <AcharyaGaneshLogo className="h-9 sm:h-10" />
         </a>
 
         {/* Right (Desktop): Phone 1, Phone 2, Log in, Course Login */}
-        <div className="hidden lg:flex items-center gap-5 xl:gap-7">
+        <div className="hidden lg:flex items-center gap-4 xl:gap-6">
           
           {/* Phone Number 1 */}
           <a
             href="tel:+917300004325"
             className="flex items-center gap-2 text-gray-900 hover:text-amber-800 transition-colors group cursor-pointer"
           >
-            <div className="w-7 h-7 rounded-full bg-black text-white flex items-center justify-center shrink-0 shadow-sm group-hover:bg-amber-800 transition-colors">
-              <Phone className="w-3.5 h-3.5 fill-white" />
+            <div className="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center shrink-0 shadow-sm group-hover:bg-amber-800 transition-colors">
+              <Phone className="w-3 h-3 fill-white" />
             </div>
             <span className="font-bold text-xs xl:text-sm tracking-tight">
               +91 73000-04325
@@ -64,8 +64,8 @@ export const Header: React.FC<HeaderProps> = ({
             href="tel:+917300004326"
             className="flex items-center gap-2 text-gray-900 hover:text-amber-800 transition-colors group cursor-pointer"
           >
-            <div className="w-7 h-7 rounded-full bg-black text-white flex items-center justify-center shrink-0 shadow-sm group-hover:bg-amber-800 transition-colors">
-              <Phone className="w-3.5 h-3.5 fill-white" />
+            <div className="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center shrink-0 shadow-sm group-hover:bg-amber-800 transition-colors">
+              <Phone className="w-3 h-3 fill-white" />
             </div>
             <span className="font-bold text-xs xl:text-sm tracking-tight">
               +91 73000-04326
@@ -76,7 +76,7 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             type="button"
             onClick={() => handleLoginClick('client')}
-            className="cursor-pointer border-2 border-black rounded-full px-4 xl:px-5 py-1 flex items-center gap-1.5 font-semibold text-xs xl:text-sm text-black hover:bg-black hover:text-white transition-all active:scale-95"
+            className="cursor-pointer border-2 border-black rounded-full px-3.5 xl:px-4 py-0.5 flex items-center gap-1.5 font-semibold text-xs xl:text-sm text-black hover:bg-black hover:text-white transition-all active:scale-95"
           >
             <User className="w-3.5 h-3.5 fill-current" />
             <span>Log in</span>
@@ -86,7 +86,7 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             type="button"
             onClick={() => handleLoginClick('course')}
-            className="cursor-pointer border-2 border-black rounded-full px-4 xl:px-5 py-1 font-semibold text-xs xl:text-sm text-black hover:bg-black hover:text-white transition-all whitespace-nowrap active:scale-95"
+            className="cursor-pointer border-2 border-black rounded-full px-3.5 xl:px-4 py-0.5 font-semibold text-xs xl:text-sm text-black hover:bg-black hover:text-white transition-all whitespace-nowrap active:scale-95"
           >
             Course Login
           </button>
@@ -131,12 +131,12 @@ export const Header: React.FC<HeaderProps> = ({
       {/* Bottom Tier: Centered Navigation Links */}
       <div className="hidden lg:block bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="flex items-center justify-center gap-7 xl:gap-10 py-2">
+          <nav className="flex items-center justify-center gap-6 xl:gap-8 py-1 sm:py-1.5">
             {navLinks.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="font-bold text-gray-900 hover:text-amber-800 text-xs xl:text-sm tracking-wide transition-colors"
+                className="font-bold text-gray-900 hover:text-amber-800 text-xs xl:text-[13px] tracking-wide transition-colors"
               >
                 {item.label}
               </a>

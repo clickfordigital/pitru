@@ -12,6 +12,7 @@ import {
   ChevronRight
 } from 'lucide-react';
 import { motion } from 'motion/react';
+import consultationImage from '../assets/images/regenerated_image_1788864599423.webp';
 
 interface WhyLearnSectionProps {
   onConsultationClick: () => void;
@@ -208,35 +209,56 @@ export const WhyLearnSection: React.FC<WhyLearnSectionProps> = ({
         </div>
 
         {/* Right Card: Need Personal Guidance Before Joining? */}
-        <div className="lg:col-span-5 bg-gradient-to-br from-[#FFF9EE] to-[#F7ECD8] rounded-2xl p-6 sm:p-7 border border-amber-300/80 shadow-md flex flex-col justify-between space-y-6">
+        <div className="lg:col-span-5 bg-gradient-to-br from-[#FFF9EE] via-[#FFF5E5] to-[#F7ECD8] rounded-2xl p-6 sm:p-7 border border-amber-300/80 shadow-md flex flex-col justify-between space-y-5">
           
           {/* Header pill with real avatar */}
           <div className="flex items-center gap-3">
             <img
-              src="/acharya-ganesh-pitru-paksh.jpg"
-              alt="Acharya Ganesh Mentorship"
-              className="w-12 h-12 rounded-full object-cover object-top border-2 border-amber-500 shadow-sm"
+              src="/acharya-ganesh-logo.jpg"
+              alt="Acharya Ganesh Official Logo"
+              className="w-12 h-12 rounded-full object-contain p-0.5 bg-white border-2 border-amber-500 shadow-sm"
+              referrerPolicy="no-referrer"
             />
             <div>
               <div className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-200/80 text-amber-950 uppercase tracking-wider">
-                DIRECT MENTORSHIP
+                1-ON-1 VEDIC GUIDANCE
               </div>
               <div className="font-serif font-bold text-sm text-gray-900">
                 Acharya Ganesh
               </div>
               <div className="text-[11px] text-gray-600">
-                Senior Vedic Faculty Team
+                Grand Master Astrovastu & Vedic Guide
               </div>
             </div>
           </div>
 
           <div className="space-y-2">
             <h3 className="font-serif text-xl sm:text-2xl font-bold text-gray-900 leading-snug">
-              NEED PERSONAL GUIDANCE BEFORE JOINING?
+              BOOK CONSULTATION WITH ACHARYA GANESH
             </h3>
             <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
-              Not sure whether your family's recurring challenges stem from Pitru Dosh or regular planetary dashas? Connect directly with Acharya Ganesh's senior consultation team.
+              Book an exclusive 1-on-1 personal consultation with Acharya Ganesh. Get your birth chart, family gotra, and ancestral debts analyzed with proven Shastric remedies and a personalized spiritual roadmap.
             </p>
+          </div>
+
+          {/* Visual Showcase: Personal Consultation & Horoscope Audit */}
+          <div className="relative rounded-xl overflow-hidden border border-amber-300/80 shadow-md group">
+            <img
+              src={consultationImage}
+              alt="Acharya Ganesh Vedic Astrology Personal Consultation Setup"
+              className="w-full h-44 sm:h-52 object-cover object-center transition-transform duration-500 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
+            <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-white text-[11px] font-medium drop-shadow-sm">
+              <span className="flex items-center gap-1.5 bg-amber-950/85 backdrop-blur-xs px-2.5 py-1 rounded-md border border-amber-400/40 text-amber-100">
+                <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+                1-on-1 Kundali & Gotra Audit
+              </span>
+              <span className="bg-emerald-950/85 backdrop-blur-xs text-emerald-300 px-2.5 py-1 rounded-md text-[10px] font-bold border border-emerald-400/40">
+                Live Slots Today
+              </span>
+            </div>
           </div>
 
           {/* Value points */}
@@ -252,7 +274,7 @@ export const WhyLearnSection: React.FC<WhyLearnSectionProps> = ({
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
             <button
               onClick={onConsultationClick}
               className="cursor-pointer flex-1 py-3 px-4 rounded-xl bg-amber-800 hover:bg-amber-900 text-white font-bold text-xs sm:text-sm uppercase tracking-wider text-center shadow transition-all active:scale-95"

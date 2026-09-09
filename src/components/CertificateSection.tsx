@@ -7,20 +7,26 @@ interface CertificateSectionProps {
 
 export const CertificateSection: React.FC<CertificateSectionProps> = ({ onEnrollClick }) => {
   return (
-    <div id="certificate" className="max-w-5xl mx-auto">
-      {/* 2-Column Card: Left Text & Highlights, Right Certificate Image */}
-      <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-[#FFFDF9] via-[#F8F2E4] to-[#EFE4D2] border-2 border-[#D9BE9B] p-5 sm:p-7 lg:p-8 shadow-xl shadow-amber-950/5">
+    <section 
+      id="certificate" 
+      className="py-6 sm:py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
+    >
+      <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden bg-gradient-to-br from-[#FFFDF9] via-[#F8F2E4] to-[#EFE4D2] border-2 border-[#D9BE9B] p-6 sm:p-8 lg:p-10 shadow-xl shadow-amber-950/10">
         
-        {/* Subtle Decorative Golden Accents */}
+        {/* Subtle Decorative Golden Shimmer Line */}
         <div className="absolute top-0 inset-x-12 h-[2px] bg-gradient-to-r from-transparent via-amber-400/80 to-transparent pointer-events-none" />
-        <div className="absolute -top-12 -right-12 w-44 h-44 bg-amber-400/10 rounded-full blur-2xl pointer-events-none" />
+        <div className="absolute -top-24 -right-24 w-80 h-80 bg-amber-400/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Left Column: Heading, Glowing Logo & CTA */}
           <div className="lg:col-span-6 space-y-4 text-left">
             <div className="space-y-1.5">
-              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-gray-900 leading-tight">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAF1E4] border border-[#E5CEAB] text-[#783908] text-xs font-bold uppercase tracking-wider mb-1">
+                <span>GOVERNMENT REGISTERED ACCREDITATION</span>
+              </div>
+              <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
                 Official Certificate of Participation
               </h3>
               <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
@@ -105,9 +111,8 @@ export const CertificateSection: React.FC<CertificateSectionProps> = ({ onEnroll
           </div>
 
         </div>
-
       </div>
-    </div>
+    </section>
   );
 };
 

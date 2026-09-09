@@ -36,11 +36,11 @@ export const VideoPreviewModal: React.FC<VideoPreviewModalProps> = ({
 
         {/* Video Player Mockup */}
         <div className="p-6 space-y-5">
-          <div className="relative aspect-video rounded-2xl overflow-hidden bg-black border border-amber-500/30 flex flex-col items-center justify-center group shadow-inner">
+          <div className="relative aspect-square max-w-sm sm:max-w-md mx-auto w-full rounded-2xl overflow-hidden bg-black border border-amber-500/30 flex flex-col items-center justify-center group shadow-inner">
             <img
               src="/acharya-ganesh-pitru-paksh.jpg"
               alt="Mentor Hanish Bagga Pitru Paksh Overview"
-              className="w-full h-full object-cover object-top filter brightness-75 group-hover:scale-105 transition-transform duration-500"
+              className="w-full h-full object-cover object-center filter brightness-75 group-hover:scale-105 transition-transform duration-500"
               referrerPolicy="no-referrer"
             />
             

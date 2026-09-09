@@ -80,14 +80,11 @@ export default function App() {
           onTalkToTeamClick={handleConsultationClick}
         />
 
-        {/* 9. Certificate Preview & FAQ Section */}
-        <section className="py-6 sm:py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-8">
-          {/* Certificate Showcase */}
-          <CertificateSection onEnrollClick={handleEnrollClick} />
+        {/* 9. Official Certificate of Participation */}
+        <CertificateSection onEnrollClick={handleEnrollClick} />
 
-          {/* Searchable FAQ Accordion */}
-          <FaqSection />
-        </section>
+        {/* 10. Searchable FAQ Accordion */}
+        <FaqSection />
 
         {/* 10. Final High-Conversion Golden CTA Banner */}
         <FinalCtaBanner 

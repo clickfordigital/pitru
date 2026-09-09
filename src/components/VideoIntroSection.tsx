@@ -73,12 +73,12 @@ export const VideoIntroSection: React.FC = () => {
       <div className="max-w-4xl mx-auto">
         <div className="relative rounded-2xl overflow-hidden bg-slate-950 border-2 border-amber-500/40 shadow-xl shadow-amber-950/20 group">
           
-          <div className="relative aspect-video w-full flex items-center justify-center overflow-hidden bg-gradient-to-b from-stone-900 to-black">
+          <div className="relative aspect-square max-w-xl mx-auto w-full flex items-center justify-center overflow-hidden bg-gradient-to-b from-stone-900 to-black">
             {/* Mentor Poster */}
             <img
               src="/acharya-ganesh-pitru-paksh.jpg"
               alt="Mentor Hanish Bagga introducing the Pitru Paksha & Shradh Masterclass"
-              className={`w-full h-full object-cover object-top transition-transform duration-700 ${
+              className={`w-full h-full object-cover object-center transition-transform duration-700 ${
                 isPlaying ? 'scale-105 opacity-90' : 'opacity-95'
               }`}
               referrerPolicy="no-referrer"

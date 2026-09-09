@@ -281,12 +281,12 @@ export const WhyLearnSection: React.FC<WhyLearnSectionProps> = ({
 
           {/* YouTube-Style Video Player */}
           <div className="relative rounded-xl overflow-hidden bg-black border border-amber-400/50 shadow-md group">
-            <div className="relative aspect-video w-full flex items-center justify-center overflow-hidden bg-slate-950">
+            <div className="relative aspect-square w-full flex items-center justify-center overflow-hidden bg-slate-950">
               {/* Mentor Poster */}
               <img
                 src="/acharya-ganesh-pitru-paksh.jpg"
                 alt="Mentor Hanish Bagga introducing the Pitru Paksha & Shradh Masterclass"
-                className={`w-full h-full object-cover object-top transition-transform duration-700 ${
+                className={`w-full h-full object-cover object-center transition-transform duration-700 ${
                   isPlaying ? 'scale-105 opacity-90' : 'opacity-95'
                 }`}
                 referrerPolicy="no-referrer"

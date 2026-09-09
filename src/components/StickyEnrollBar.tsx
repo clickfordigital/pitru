@@ -58,13 +58,23 @@ export const StickyEnrollBar: React.FC<StickyEnrollBarProps> = ({ onEnrollClick 
             </div>
           </div>
 
-          <button
-            onClick={onEnrollClick}
-            className="cursor-pointer flex items-center gap-1.5 px-4 sm:px-6 py-2 sm:py-2.5 rounded-xl bg-gradient-to-r from-amber-500 via-amber-600 to-yellow-600 hover:brightness-110 text-gray-950 font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg active:scale-95 transition-all"
-          >
-            <span>ENROLL NOW</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
+          <div className="relative group">
+            {/* Ambient Animated Golden Aura Glow */}
+            <div 
+              className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 opacity-75 blur-md group-hover:opacity-100 animate-pulse transition duration-500"
+              aria-hidden="true"
+            />
+            
+            {/* Button with Sheen and Pulsating Shadow */}
+            <button
+              onClick={onEnrollClick}
+              className="relative cursor-pointer flex items-center gap-1.5 px-4 sm:px-6 py-2 sm:py-2.5 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-gray-950 font-black text-xs sm:text-sm uppercase tracking-wider active:scale-95 transition-all golden-glow-btn sheen-effect"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-amber-950 shrink-0" />
+              <span className="font-extrabold tracking-wide">ENROLL NOW</span>
+              <ArrowRight className="w-4 h-4 text-gray-950 group-hover:translate-x-1 transition-transform shrink-0" />
+            </button>
+          </div>
         </div>
 
       </div>

@@ -27,7 +27,7 @@ export const Header: React.FC<HeaderProps> = ({
     { label: 'Video Session', href: '#video-intro' },
     { label: 'About', href: '#whylearn' },
     { label: 'Courses', href: '#curriculum' },
-    { label: 'Consultation', href: '#whylearn' },
+    { label: 'Consultation', href: '#consultation' },
     { label: 'Certificate', href: '#certificate' },
     { label: 'FAQs', href: '#faq' },
   ];

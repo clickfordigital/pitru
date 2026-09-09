@@ -1,29 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { 
   Award, 
   CheckCircle2, 
   Calendar, 
   BookOpen, 
   HelpCircle, 
-  Lock, 
-  Compass, 
-  PhoneCall,
-  Sparkles,
-  ChevronRight
+  Play,
+  Pause,
+  Volume2,
+  VolumeX,
+  RotateCcw,
+  Maximize2
 } from 'lucide-react';
 import { motion } from 'motion/react';
-import consultationImage from '../assets/images/regenerated_image_1788864599423.webp';
 
 interface WhyLearnSectionProps {
-  onConsultationClick: () => void;
-  onTalkToTeamClick: () => void;
+  onOpenVideoModal?: () => void;
 }
 
 export const WhyLearnSection: React.FC<WhyLearnSectionProps> = ({ 
-  onConsultationClick, 
-  onTalkToTeamClick 
+  onOpenVideoModal
 }) => {
-  // Exactly 5 cards (removed Celebrity Astrologer, TV Panelist, Community Support)
+  // Exactly 5 cards
   const features = [
     { 
       id: '01',
@@ -64,6 +62,51 @@ export const WhyLearnSection: React.FC<WhyLearnSectionProps> = ({
 
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
+  // Video playback state for interactive YouTube player
+  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const [isMuted, setIsMuted] = useState<boolean>(false);
+  const [currentTime, setCurrentTime] = useState<number>(0);
+  const totalDuration = 272; // 4 minutes 32 seconds
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    if (isPlaying) {
+      timerRef.current = setInterval(() => {
+        setCurrentTime((prev) => {
+          if (prev >= totalDuration) {
+            setIsPlaying(false);
+            return 0;
+          }
+          return prev + 1;
+        });
+      }, 1000);
+    } else if (timerRef.current) {
+      clearInterval(timerRef.current);
+    }
+
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, [isPlaying]);
+
+  const togglePlay = () => {
+    setIsPlaying(!isPlaying);
+  };
+
+  const handleSeek = (seconds: number) => {
+    setCurrentTime(seconds);
+  };
+
+  const toggleMute = () => {
+    setIsMuted(!isMuted);
+  };
+
+  const formatTime = (secs: number) => {
+    const m = Math.floor(secs / 60);
+    const s = Math.floor(secs % 60);
+    return `${m}:${s < 10 ? '0' : ''}${s}`;
+  };
+
   // Cycle through the 5 cards one by one every 0.8 seconds (800ms)
   useEffect(() => {
     const interval = setInterval(() => {
@@ -85,15 +128,14 @@ export const WhyLearnSection: React.FC<WhyLearnSectionProps> = ({
           Why Learn From Acharya Ganesh?
         </h2>
         <p className="text-sm sm:text-base text-gray-600">
-          Get authentic knowledge, practical training, and dedicated guidance from India's most trusted Vedic guide.
+          Rooted in Parashari Vedic Astrology, structured for beginners and practicing astrologers alike.
         </p>
 
-        {/* Interactive animation indicator tracker */}
+        {/* Feature Cycle Indicator Dots */}
         <div className="flex items-center justify-center gap-1.5 mt-4">
           {features.map((_, i) => (
             <button
               key={i}
-              type="button"
               onClick={() => setActiveIndex(i)}
               aria-label={`Highlight feature ${i + 1}`}
               className={`h-2 rounded-full transition-all duration-300 ${
@@ -106,10 +148,11 @@ export const WhyLearnSection: React.FC<WhyLearnSectionProps> = ({
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+      {/* Grid: 5 Feature Cards on Left, YouTube Video Section on Right */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
         
-        {/* Left 5 Feature Cards Layout with 0.8s Animation */}
-        <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+        {/* Left 7 Columns: 5 Feature Cards */}
+        <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
           {features.map((feat, idx) => {
             const isActive = activeIndex === idx;
             const isLastSpan = idx === 4; // 5th card spans full width for perfect symmetry
@@ -163,7 +206,7 @@ export const WhyLearnSection: React.FC<WhyLearnSectionProps> = ({
                     </div>
                   </div>
                 ) : (
-                  /* Cards 1-4: Spacious Vertical Stack Layout with 100% Unclipped Text */
+                  /* Cards 1-4: Spacious Vertical Stack Layout */
                   <div>
                     {/* Header Row: Icon + Subtitle Badge */}
                     <div className="flex items-center justify-between gap-2 mb-3.5 sm:mb-4">
@@ -186,12 +229,12 @@ export const WhyLearnSection: React.FC<WhyLearnSectionProps> = ({
                       </span>
                     </div>
 
-                    {/* Title: Full Width, Never Truncated */}
+                    {/* Title */}
                     <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 leading-snug">
                       {feat.title}
                     </h3>
 
-                    {/* Description: Generous Line Height and Clear Readability */}
+                    {/* Description */}
                     <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                       {feat.desc}
                     </p>
@@ -202,72 +245,172 @@ export const WhyLearnSection: React.FC<WhyLearnSectionProps> = ({
           })}
         </div>
 
-        {/* Right Card: Need Personal Guidance Before Joining? */}
-        <div className="lg:col-span-5 bg-gradient-to-br from-[#FFF9EE] via-[#FFF5E5] to-[#F7ECD8] rounded-2xl p-6 sm:p-7 border border-amber-300/80 shadow-md flex flex-col justify-between space-y-5">
+        {/* Right 5 Columns: YouTube Section (Replaces Consultation Card) */}
+        <div id="video-intro" className="lg:col-span-5 bg-gradient-to-br from-[#FFFDF9] via-[#FFF9EE] to-[#F7ECD8] rounded-2xl p-5 sm:p-6 border border-amber-300/90 shadow-md flex flex-col justify-between space-y-4">
           
-          {/* Header pill with real avatar */}
-          <div className="flex items-center gap-3">
-            <img
-              src="/acharya-ganesh-logo.jpg"
-              alt="Acharya Ganesh Official Logo"
-              className="w-12 h-12 rounded-full object-contain p-0.5 bg-white border-2 border-amber-500 shadow-sm"
-              referrerPolicy="no-referrer"
-            />
-            <div>
-              <div className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-200/80 text-amber-950 uppercase tracking-wider">
-                1-ON-1 VEDIC GUIDANCE
+          {/* Top Row: YouTube Branding & Badges */}
+          <div className="flex items-center justify-between gap-2">
+            <div className="flex items-center gap-2.5">
+              <div className="w-8 h-6 rounded-md bg-[#FF0000] flex items-center justify-center text-white shadow-xs">
+                <Play className="w-3.5 h-3.5 fill-white ml-0.5" />
               </div>
-              <div className="font-serif font-bold text-sm text-gray-900">
-                Acharya Ganesh
+              <div>
+                <span className="text-xs font-bold text-gray-900 uppercase tracking-wider block leading-tight">
+                  Acharya Ganesh
+                </span>
+                <span className="text-[10px] text-gray-600 block leading-tight">
+                  Official YouTube Video
+                </span>
               </div>
             </div>
+            
+            <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-red-50 text-red-700 border border-red-200 uppercase tracking-wider">
+              Preview Session
+            </span>
           </div>
 
-          <div className="space-y-2">
-            <h3 className="font-serif text-xl sm:text-2xl font-bold text-gray-900 leading-snug">
-              BOOK CONSULTATION WITH ACHARYA GANESH
+          {/* Title & Description */}
+          <div className="space-y-1.5">
+            <h3 className="font-serif text-lg sm:text-xl font-bold text-gray-900 leading-snug">
+              Course Overview by Mentor Hanish Bagga
             </h3>
-            <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
-              Book an exclusive 1-on-1 consultation with Acharya Ganesh. Get Personalized Astrological Guidance on Career, Vastu, Health, and Matchmaking from Astro Vastu expert Hanish Bagga. Book your session today!
+            <p className="text-xs text-gray-700 leading-relaxed">
+              Watch Hanish Sir explain the Vedic significance of Shradh, ancestor karma remedies, and what is covered in the 20-part syllabus.
             </p>
           </div>
 
-          {/* Visual Showcase: Personal Consultation & Horoscope Audit */}
-          <div className="relative rounded-xl overflow-hidden border border-amber-300/80 shadow-md group">
-            <img
-              src={consultationImage}
-              alt="Acharya Ganesh Vedic Astrology Personal Consultation Setup"
-              className="w-full h-44 sm:h-52 object-cover object-center transition-transform duration-500 group-hover:scale-105"
-              referrerPolicy="no-referrer"
-            />
+          {/* YouTube-Style Video Player */}
+          <div className="relative rounded-xl overflow-hidden bg-black border border-amber-400/50 shadow-md group">
+            <div className="relative aspect-video w-full flex items-center justify-center overflow-hidden bg-slate-950">
+              {/* Mentor Poster */}
+              <img
+                src="/acharya-ganesh-pitru-paksh.jpg"
+                alt="Mentor Hanish Bagga introducing the Pitru Paksha & Shradh Masterclass"
+                className={`w-full h-full object-cover object-top transition-transform duration-700 ${
+                  isPlaying ? 'scale-105 opacity-90' : 'opacity-95'
+                }`}
+                referrerPolicy="no-referrer"
+              />
+
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/40 pointer-events-none" />
+
+              {/* Center Play Button */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+                <button
+                  type="button"
+                  onClick={togglePlay}
+                  aria-label={isPlaying ? 'Pause video' : 'Play video session'}
+                  className={`pointer-events-auto cursor-pointer flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full transition-all duration-300 active:scale-95 ${
+                    isPlaying 
+                      ? 'bg-black/50 hover:bg-black/80 opacity-0 group-hover:opacity-100' 
+                      : 'bg-[#FF0000] hover:bg-[#E60000] text-white shadow-xl shadow-red-600/40 hover:scale-105'
+                  }`}
+                >
+                  {isPlaying ? (
+                    <Pause className="w-6 h-6 text-white" />
+                  ) : (
+                    <Play className="w-6 h-6 fill-white text-white ml-0.5" />
+                  )}
+                </button>
+
+                {!isPlaying && (
+                  <span className="mt-2.5 px-3 py-1 rounded-full bg-black/80 backdrop-blur-sm border border-white/20 text-white text-[11px] font-semibold tracking-wide flex items-center gap-1.5 shadow-lg">
+                    <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+                    Hanish Sir Orientation (4:32)
+                  </span>
+                )}
+              </div>
+
+              {/* Bottom Controls Bar */}
+              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black via-black/90 to-transparent p-2.5 sm:p-3 flex flex-col gap-1.5 z-10">
+                {/* Progress Scrubber */}
+                <div 
+                  className="w-full h-1.5 bg-gray-700/80 rounded-full cursor-pointer relative overflow-hidden"
+                  onClick={(e) => {
+                    const rect = e.currentTarget.getBoundingClientRect();
+                    const clickX = e.clientX - rect.left;
+                    const percent = clickX / rect.width;
+                    handleSeek(Math.floor(percent * totalDuration));
+                  }}
+                >
+                  <div 
+                    className="h-full bg-gradient-to-r from-red-600 to-amber-400 rounded-full transition-all duration-200"
+                    style={{ width: `${(currentTime / totalDuration) * 100}%` }}
+                  />
+                </div>
+
+                {/* Time & Controls */}
+                <div className="flex items-center justify-between text-white text-[11px] pt-0.5">
+                  <div className="flex items-center gap-2.5">
+                    <button 
+                      onClick={togglePlay}
+                      className="cursor-pointer hover:text-amber-400 transition-colors p-0.5"
+                      aria-label={isPlaying ? 'Pause' : 'Play'}
+                    >
+                      {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5 fill-current" />}
+                    </button>
+
+                    <button 
+                      onClick={toggleMute}
+                      className="cursor-pointer hover:text-amber-400 transition-colors p-0.5"
+                      aria-label={isMuted ? 'Unmute' : 'Mute'}
+                    >
+                      {isMuted ? <VolumeX className="w-3.5 h-3.5 text-red-400" /> : <Volume2 className="w-3.5 h-3.5" />}
+                    </button>
+
+                    <div className="text-gray-300 font-mono text-[10px] sm:text-[11px]">
+                      <span className="text-amber-300 font-semibold">{formatTime(currentTime)}</span>
+                      <span className="mx-1 text-gray-500">/</span>
+                      <span>{formatTime(totalDuration)}</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <button 
+                      onClick={() => handleSeek(0)}
+                      className="cursor-pointer hover:text-amber-300 text-gray-300 text-[10px] flex items-center gap-1 font-medium"
+                      title="Restart Video"
+                    >
+                      <RotateCcw className="w-3 h-3" />
+                      <span>Restart</span>
+                    </button>
+                    {onOpenVideoModal && (
+                      <button 
+                        onClick={onOpenVideoModal}
+                        className="cursor-pointer hover:text-amber-300 text-gray-300 text-[10px] flex items-center gap-1 font-medium ml-1"
+                        title="Expand Video"
+                      >
+                        <Maximize2 className="w-3 h-3" />
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Value points */}
-          <div className="grid grid-cols-2 gap-2 text-xs font-semibold text-gray-800 pt-1">
-            <div className="flex items-center gap-1.5 bg-white/70 px-2.5 py-1.5 rounded-lg border border-amber-200/60">
-              <Lock className="w-3.5 h-3.5 text-amber-700" />
-              <span>100% Confidential</span>
+          {/* Value Highlights Under Video */}
+          <div className="grid grid-cols-3 gap-2 text-center text-[10px] font-semibold text-gray-700 pt-0.5">
+            <div className="bg-white/80 py-1.5 px-1 rounded-lg border border-amber-200/70">
+              ⏱️ 4:32 Mins
             </div>
-            <div className="flex items-center gap-1.5 bg-white/70 px-2.5 py-1.5 rounded-lg border border-amber-200/60">
-              <Compass className="w-3.5 h-3.5 text-amber-700" />
-              <span>Custom Roadmap</span>
+            <div className="bg-white/80 py-1.5 px-1 rounded-lg border border-amber-200/70">
+              📜 20-Part Vidhi
+            </div>
+            <div className="bg-white/80 py-1.5 px-1 rounded-lg border border-amber-200/70">
+              🌟 Hindi & English
             </div>
           </div>
 
-          {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
+          {/* Action Button */}
+          <div className="pt-1">
             <button
-              onClick={onConsultationClick}
-              className="cursor-pointer flex-1 py-3 px-4 rounded-xl bg-amber-800 hover:bg-amber-900 text-white font-bold text-xs sm:text-sm uppercase tracking-wider text-center shadow transition-all active:scale-95"
+              onClick={onOpenVideoModal || togglePlay}
+              className="w-full cursor-pointer py-2.5 px-4 rounded-xl bg-gradient-to-r from-red-600 via-red-700 to-stone-900 hover:brightness-110 text-white font-bold text-xs uppercase tracking-wider text-center shadow transition-all active:scale-98 flex items-center justify-center gap-2"
             >
-              BOOK CONSULTATION
-            </button>
-            <button
-              onClick={onTalkToTeamClick}
-              className="cursor-pointer flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-white hover:bg-amber-50 text-gray-800 font-semibold text-xs sm:text-sm border border-amber-300 transition-all active:scale-95"
-            >
-              <PhoneCall className="w-4 h-4 text-amber-700" />
-              <span>Talk to Our Team</span>
+              <Play className="w-3.5 h-3.5 fill-white" />
+              <span>{isPlaying ? 'Watching Overview Session' : 'Watch Full Video Session'}</span>
             </button>
           </div>
 
@@ -278,4 +421,3 @@ export const WhyLearnSection: React.FC<WhyLearnSectionProps> = ({
     </section>
   );
 };
-

@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
 import { StatsBar } from './components/StatsBar';
-import { VideoIntroSection } from './components/VideoIntroSection';
 import { CurriculumTable } from './components/CurriculumTable';
 import { WhyLearnSection } from './components/WhyLearnSection';
 import { LearningJourney } from './components/LearningJourney';
 import { TestimonialsSection } from './components/TestimonialsSection';
+import { ConsultationSection } from './components/ConsultationSection';
 import { CertificateSection } from './components/CertificateSection';
 import { FaqSection } from './components/FaqSection';
 import { FinalCtaBanner } from './components/FinalCtaBanner';
@@ -63,20 +63,22 @@ export default function App() {
           onEnrollClick={handleEnrollClick}
         />
 
-        {/* 5. Why Learn From Acharya Ganesh & Guidance Card */}
+        {/* 5. Why Learn From Acharya Ganesh & YouTube Video Section */}
         <WhyLearnSection 
-          onConsultationClick={handleConsultationClick}
-          onTalkToTeamClick={handleConsultationClick}
+          onOpenVideoModal={handleVideoClick}
         />
 
         {/* 6. Course Deliverables Flow */}
         <LearningJourney />
 
-        {/* 7. Course Orientation Video Session with Mentor Hanish Bagga */}
-        <VideoIntroSection />
-
-        {/* 8. Student Testimonials */}
+        {/* 7. Student Testimonials */}
         <TestimonialsSection />
+
+        {/* 8. Dedicated Consultation Section with Acharya Ganesh (Moved Further Down) */}
+        <ConsultationSection 
+          onConsultationClick={handleConsultationClick}
+          onTalkToTeamClick={handleConsultationClick}
+        />
 
         {/* 9. Certificate Preview & FAQ Section */}
         <section className="py-6 sm:py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-8">
@@ -87,7 +89,7 @@ export default function App() {
           <FaqSection />
         </section>
 
-        {/* 12. Final High-Conversion Golden CTA Banner */}
+        {/* 10. Final High-Conversion Golden CTA Banner */}
         <FinalCtaBanner 
           onEnrollClick={handleEnrollClick}
           onConsultationClick={handleConsultationClick}

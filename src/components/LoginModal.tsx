@@ -89,7 +89,7 @@ export const LoginModal: React.FC<LoginModalProps> = ({
         <div className="p-6">
           {submitted ? (
             <div className="py-8 text-center space-y-3">
-              <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto">
+              <div className="w-12 h-12 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center mx-auto">
                 <ShieldCheck className="w-7 h-7" />
               </div>
               <h4 className="font-bold text-gray-900 text-base">Logging into Portal...</h4>

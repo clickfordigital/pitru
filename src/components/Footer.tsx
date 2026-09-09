@@ -138,7 +138,7 @@ export const Footer: React.FC<FooterProps> = ({ onEnrollClick }) => {
                 </button>
               </form>
               {subscribed && (
-                <div className="text-[11px] text-emerald-400 mt-1">
+                <div className="text-[11px] text-amber-300 mt-1">
                   Thank you! You will receive our free Shradh Muhurta calendar.
                 </div>
               )}

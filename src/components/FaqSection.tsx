@@ -18,6 +18,9 @@ export const FaqSection: React.FC = () => {
   return (
     <section id="faq" className="space-y-4">
       <div>
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAF1E4] border border-[#E5CEAB] text-[#783908] text-xs font-bold uppercase tracking-wider mb-2">
+          <span>CLARIFICATIONS & ANSWERS</span>
+        </div>
         <h3 className="font-serif text-2xl font-bold text-gray-900 uppercase">
           FREQUENTLY ASKED QUESTIONS
         </h3>
@@ -31,29 +34,31 @@ export const FaqSection: React.FC = () => {
           placeholder="Search your question..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full pl-10 pr-4 py-2.5 text-xs sm:text-sm rounded-xl border border-amber-200 bg-white focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-500"
+          className="w-full pl-10 pr-4 py-2.5 text-xs sm:text-sm rounded-xl border border-[#DEC4A1] bg-[#FFFDF9] focus:outline-none focus:ring-2 focus:ring-[#8A3A0B]/20 focus:border-[#8A3A0B] shadow-2xs"
         />
       </div>
 
       {/* Accordion List */}
-      <div className="bg-white rounded-2xl border border-amber-200/80 divide-y divide-amber-100 shadow-sm overflow-hidden">
+      <div className="bg-[#FFFDF9] rounded-2xl border border-[#DEC4A1] divide-y divide-[#EFE2CE] shadow-2xs overflow-hidden">
         {filteredFaqs.map((faq) => {
           const isOpen = expandedId === faq.id;
           return (
             <div key={faq.id} className="transition-colors">
               <button
                 onClick={() => toggleFaq(faq.id)}
-                className="cursor-pointer w-full p-4 flex items-center justify-between text-left hover:bg-amber-50/40 transition-colors gap-3"
+                className={`cursor-pointer w-full p-4 flex items-center justify-between text-left transition-colors gap-3 ${
+                  isOpen ? 'bg-[#FBF5EC]' : 'hover:bg-[#FAF6EE]'
+                }`}
               >
-                <span className="font-semibold text-xs sm:text-sm text-gray-900">
+                <span className={`font-semibold text-xs sm:text-sm ${isOpen ? 'text-[#7C2D12]' : 'text-gray-900'}`}>
                   {faq.question}
                 </span>
                 <span className="text-gray-500 text-xs shrink-0">
-                  {isOpen ? <ChevronUp className="w-4 h-4 text-amber-700" /> : <ChevronDown className="w-4 h-4" />}
+                  {isOpen ? <ChevronUp className="w-4 h-4 text-[#8A3A0B]" /> : <ChevronDown className="w-4 h-4" />}
                 </span>
               </button>
               {isOpen && (
-                <div className="px-4 pb-4 pt-1 text-xs text-gray-600 bg-amber-50/20 leading-relaxed border-t border-amber-50">
+                <div className="px-4 pb-4 pt-2 text-xs sm:text-sm text-gray-700 bg-[#FAF4EA] leading-relaxed border-t border-[#F0E4D2]">
                   {faq.answer}
                 </div>
               )}

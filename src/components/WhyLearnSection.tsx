@@ -121,9 +121,9 @@ export const WhyLearnSection: React.FC<WhyLearnSectionProps> = ({
       
       {/* Section Header */}
       <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
-        <span className="text-xs sm:text-sm font-bold tracking-widest text-amber-700 uppercase">
-          WHY CHOOSE THIS COURSE
-        </span>
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAF1E4] border border-[#E5CEAB] text-[#783908] text-xs font-bold uppercase tracking-wider mb-2">
+          <span>WHY CHOOSE THIS COURSE</span>
+        </div>
         <h2 className="font-serif text-3xl sm:text-4xl font-bold text-gray-900 mt-1 mb-2">
           Why Learn From Acharya Ganesh?
         </h2>
@@ -140,8 +140,8 @@ export const WhyLearnSection: React.FC<WhyLearnSectionProps> = ({
               aria-label={`Highlight feature ${i + 1}`}
               className={`h-2 rounded-full transition-all duration-300 ${
                 activeIndex === i 
-                  ? 'w-6 bg-amber-700 shadow-sm' 
-                  : 'w-2 bg-amber-200 hover:bg-amber-300'
+                  ? 'w-6 bg-[#8A3A0B] shadow-sm' 
+                  : 'w-2 bg-[#E2D2BD] hover:bg-[#D4BEA3]'
               }`}
             />
           ))}
@@ -169,8 +169,8 @@ export const WhyLearnSection: React.FC<WhyLearnSectionProps> = ({
                   isLastSpan ? 'sm:col-span-2' : 'col-span-1'
                 } ${
                   isActive
-                    ? 'bg-gradient-to-br from-[#FFFDF9] via-[#FFF8EC] to-[#FEF3D6] border-amber-500 shadow-xl shadow-amber-900/10 ring-2 ring-amber-400/60 scale-[1.02]'
-                    : 'bg-white border-amber-200/90 shadow-sm hover:border-amber-300 hover:bg-amber-50/40 hover:shadow-md'
+                    ? 'bg-gradient-to-br from-[#FFFDF8] via-[#FFF6E5] to-[#FEEDCD] border-[#D48F35] shadow-lg shadow-amber-950/10 ring-2 ring-[#EAA84C]/50 scale-[1.02]'
+                    : 'bg-white/95 border-[#E6DBCA] shadow-2xs hover:border-[#C48E4D] hover:bg-[#FFFBF5] hover:shadow-md'
                 }`}
               >
                 {isLastSpan ? (
@@ -178,11 +178,11 @@ export const WhyLearnSection: React.FC<WhyLearnSectionProps> = ({
                   <div className="sm:flex sm:items-start sm:gap-5">
                     <div className={`w-13 h-13 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center shrink-0 mb-3 sm:mb-0 transition-all shadow-sm ${
                       isActive 
-                        ? 'bg-amber-600 text-white shadow-amber-700/30' 
-                        : 'bg-gradient-to-br from-amber-50 to-amber-100/70 border border-amber-200/80 text-amber-800'
+                        ? 'bg-[#8A3A0B] text-white shadow-[#8A3A0B]/30' 
+                        : 'bg-gradient-to-br from-[#FAF2E6] to-[#F3E5D0] border border-[#E5D2B8] text-[#783908]'
                     }`}>
                       {React.cloneElement(feat.icon, {
-                        className: `w-6 h-6 sm:w-7 sm:h-7 ${isActive ? 'text-white' : 'text-amber-800'}`
+                        className: `w-6 h-6 sm:w-7 sm:h-7 ${isActive ? 'text-white' : 'text-[#783908]'}`
                       })}
                     </div>
 
@@ -193,8 +193,8 @@ export const WhyLearnSection: React.FC<WhyLearnSectionProps> = ({
                         </h3>
                         <span className={`text-[10px] sm:text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shrink-0 ${
                           isActive 
-                            ? 'bg-amber-600 text-white shadow-xs' 
-                            : 'bg-amber-100 text-amber-900 border border-amber-200/80'
+                            ? 'bg-[#8A3A0B] text-white shadow-xs' 
+                            : 'bg-[#FAF0E1] text-[#783908] border border-[#E8D4BC]'
                         }`}>
                           {feat.subtitle}
                         </span>
@@ -212,18 +212,18 @@ export const WhyLearnSection: React.FC<WhyLearnSectionProps> = ({
                     <div className="flex items-center justify-between gap-2 mb-3.5 sm:mb-4">
                       <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center shrink-0 transition-all shadow-sm ${
                         isActive 
-                          ? 'bg-amber-600 text-white shadow-amber-700/30' 
-                          : 'bg-gradient-to-br from-amber-50 to-amber-100/70 border border-amber-200/80 text-amber-800'
+                          ? 'bg-[#8A3A0B] text-white shadow-[#8A3A0B]/30' 
+                          : 'bg-gradient-to-br from-[#FAF2E6] to-[#F3E5D0] border border-[#E5D2B8] text-[#783908]'
                       }`}>
                         {React.cloneElement(feat.icon, {
-                          className: `w-6 h-6 sm:w-7 sm:h-7 ${isActive ? 'text-white' : 'text-amber-800'}`
+                          className: `w-6 h-6 sm:w-7 sm:h-7 ${isActive ? 'text-white' : 'text-[#783908]'}`
                         })}
                       </div>
 
                       <span className={`text-[10px] sm:text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shrink-0 ${
                         isActive 
-                          ? 'bg-amber-600 text-white shadow-xs' 
-                          : 'bg-amber-100 text-amber-900 border border-amber-200/80'
+                          ? 'bg-[#8A3A0B] text-white shadow-xs' 
+                          : 'bg-[#FAF0E1] text-[#783908] border border-[#E8D4BC]'
                       }`}>
                         {feat.subtitle}
                       </span>
@@ -246,7 +246,7 @@ export const WhyLearnSection: React.FC<WhyLearnSectionProps> = ({
         </div>
 
         {/* Right 5 Columns: YouTube Section (Replaces Consultation Card) */}
-        <div id="video-intro" className="lg:col-span-5 bg-gradient-to-br from-[#FFFDF9] via-[#FFF9EE] to-[#F7ECD8] rounded-2xl p-5 sm:p-6 border border-amber-300/90 shadow-md flex flex-col justify-between space-y-4">
+        <div id="video-intro" className="lg:col-span-5 bg-gradient-to-br from-[#FFFDF9] via-[#FAF3E6] to-[#F5EAD6] rounded-2xl p-5 sm:p-6 border border-[#DEC4A1] shadow-md flex flex-col justify-between space-y-4">
           
           {/* Top Row: YouTube Branding & Badges */}
           <div className="flex items-center justify-between gap-2">

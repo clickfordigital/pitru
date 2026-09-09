@@ -70,19 +70,19 @@ export const VideoPreviewModal: React.FC<VideoPreviewModalProps> = ({
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <div className="flex items-center gap-1.5">
-                <CheckCircle className="w-3.5 h-3.5 text-emerald-400" />
+                <CheckCircle className="w-3.5 h-3.5 text-amber-400" />
                 <span>Exact Kusha grass & water mudras</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <CheckCircle className="w-3.5 h-3.5 text-emerald-400" />
+                <CheckCircle className="w-3.5 h-3.5 text-amber-400" />
                 <span>Garuda Purana Shradh rules</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <CheckCircle className="w-3.5 h-3.5 text-emerald-400" />
+                <CheckCircle className="w-3.5 h-3.5 text-amber-400" />
                 <span>9th house Pitru Dosh identification</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <CheckCircle className="w-3.5 h-3.5 text-emerald-400" />
+                <CheckCircle className="w-3.5 h-3.5 text-amber-400" />
                 <span>Sarva Pitru Amavasya solutions</span>
               </div>
             </div>
@@ -91,7 +91,7 @@ export const VideoPreviewModal: React.FC<VideoPreviewModalProps> = ({
           {/* Bottom Action */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2 border-t border-gray-800">
             <div className="text-xs text-gray-400 flex items-center gap-1.5">
-              <ShieldCheck className="w-4 h-4 text-emerald-400" />
+              <ShieldCheck className="w-4 h-4 text-amber-400" />
               <span>Includes 100+ lessons & downloadable guides</span>
             </div>
 

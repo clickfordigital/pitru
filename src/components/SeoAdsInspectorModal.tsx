@@ -26,7 +26,7 @@ export const SeoAdsInspectorModal: React.FC<SeoAdsInspectorModalProps> = ({ isOp
                 <h3 className="font-serif text-base sm:text-lg font-bold text-amber-100">
                   Google Ads & SEO Architecture Inspector
                 </h3>
-                <span className="bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 text-[10px] font-bold px-2 py-0.5 rounded-full">
+                <span className="bg-amber-500/20 text-amber-400 border border-amber-500/40 text-[10px] font-bold px-2 py-0.5 rounded-full">
                   QS: 10/10
                 </span>
               </div>
@@ -156,21 +156,21 @@ export const SeoAdsInspectorModal: React.FC<SeoAdsInspectorModalProps> = ({ isOp
           {activeTab === 'quality-score' && (
             <div className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <div className="p-4 rounded-xl bg-[#161E2C] border border-emerald-500/40 text-center space-y-1">
+                <div className="p-4 rounded-xl bg-[#161E2C] border border-amber-500/40 text-center space-y-1">
                   <div className="text-xs text-gray-400">Ad Relevance</div>
-                  <div className="text-xl font-bold text-emerald-400">Above Average</div>
+                  <div className="text-xl font-bold text-amber-400">Above Average</div>
                   <div className="text-[10px] text-gray-400">Exact match on Pitru Paksh, Tarpan, Shradh</div>
                 </div>
 
-                <div className="p-4 rounded-xl bg-[#161E2C] border border-emerald-500/40 text-center space-y-1">
+                <div className="p-4 rounded-xl bg-[#161E2C] border border-amber-500/40 text-center space-y-1">
                   <div className="text-xs text-gray-400">Expected CTR</div>
-                  <div className="text-xl font-bold text-emerald-400">Above Average</div>
+                  <div className="text-xl font-bold text-amber-400">Above Average</div>
                   <div className="text-[10px] text-gray-400">Strong social proof & price discount</div>
                 </div>
 
-                <div className="p-4 rounded-xl bg-[#161E2C] border border-emerald-500/40 text-center space-y-1">
+                <div className="p-4 rounded-xl bg-[#161E2C] border border-amber-500/40 text-center space-y-1">
                   <div className="text-xs text-gray-400">Landing Page Exp.</div>
-                  <div className="text-xl font-bold text-emerald-400">Above Average</div>
+                  <div className="text-xl font-bold text-amber-400">Above Average</div>
                   <div className="text-[10px] text-gray-400">Sub-second load, mobile first, rich FAQ</div>
                 </div>
               </div>
@@ -181,15 +181,15 @@ export const SeoAdsInspectorModal: React.FC<SeoAdsInspectorModalProps> = ({ isOp
                 </h4>
                 <div className="space-y-1.5 text-xs text-gray-300">
                   <div className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                    <CheckCircle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
                     <span><strong>Sticky Mobile Bottom Bar:</strong> Always presents the ₹1,500 CTA without blocking viewport reading.</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                    <CheckCircle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
                     <span><strong>Interactive Diagnostic Lead Magnet:</strong> 60-second Pitru Dosh checker engages skeptical traffic and drives them to enroll.</span>
                   </div>
                   <div className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                    <CheckCircle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
                     <span><strong>Authority Proof Above Fold:</strong> National TV badges (Zee News, India TV, Aaj Tak) neutralize credibility objections immediately.</span>
                   </div>
                 </div>
@@ -201,7 +201,7 @@ export const SeoAdsInspectorModal: React.FC<SeoAdsInspectorModalProps> = ({ isOp
           {activeTab === 'keywords' && (
             <div className="space-y-4">
               <div className="space-y-2">
-                <h4 className="font-bold text-emerald-400 text-xs uppercase tracking-wider">
+                <h4 className="font-bold text-amber-400 text-xs uppercase tracking-wider">
                   Primary High-Intent Google Search Keywords (Target)
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
@@ -215,7 +215,7 @@ export const SeoAdsInspectorModal: React.FC<SeoAdsInspectorModalProps> = ({ isOp
                   ].map((k, i) => (
                     <div key={i} className="p-2 rounded bg-gray-900 border border-gray-800 flex items-center justify-between">
                       <span className="font-mono text-amber-200">{k.kw}</span>
-                      <span className="text-[10px] text-emerald-400 font-semibold">{k.intent}</span>
+                      <span className="text-[10px] text-amber-400 font-semibold">{k.intent}</span>
                     </div>
                   ))}
                 </div>

@@ -67,7 +67,7 @@ export const EnrollmentModal: React.FC<EnrollmentModalProps> = ({ isOpen, onClos
                 </div>
               </div>
               <div className="text-right text-[11px] text-gray-600">
-                <span className="text-emerald-700 font-bold block">✓ You Save ₹1,500</span>
+                <span className="text-amber-800 font-bold block">✓ You Save ₹1,500</span>
                 <span>1 Year Access</span>
               </div>
             </div>
@@ -78,15 +78,15 @@ export const EnrollmentModal: React.FC<EnrollmentModalProps> = ({ isOpen, onClos
                 🎁 Exclusive Free Bonuses with Enrollment:
               </span>
               <div className="flex items-center gap-1.5 text-[11px]">
-                <CheckCircle className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                <CheckCircle className="w-3.5 h-3.5 text-amber-700 shrink-0" />
                 <span>Downloadable Pind Daan & Tarpan Practical Guidebook PDF (₹1,200 value)</span>
               </div>
               <div className="flex items-center gap-1.5 text-[11px]">
-                <CheckCircle className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                <CheckCircle className="w-3.5 h-3.5 text-amber-700 shrink-0" />
                 <span>High-frequency Pitru Suktam & Gayatri Mantra Audio MP3s</span>
               </div>
               <div className="flex items-center gap-1.5 text-[11px]">
-                <CheckCircle className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                <CheckCircle className="w-3.5 h-3.5 text-amber-700 shrink-0" />
                 <span>16-Day Kutup Muhurta & Shradh Tithi Calculator</span>
               </div>
             </div>
@@ -190,7 +190,7 @@ export const EnrollmentModal: React.FC<EnrollmentModalProps> = ({ isOpen, onClos
 
               <div className="flex items-center justify-center gap-3 text-[11px] text-gray-500">
                 <span className="flex items-center gap-1">
-                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" /> 256-Bit SSL Encrypted
+                  <ShieldCheck className="w-3.5 h-3.5 text-amber-800" /> 256-Bit SSL Encrypted
                 </span>
                 <span>•</span>
                 <span>Instant Video Access on WhatsApp & Email</span>
@@ -200,7 +200,7 @@ export const EnrollmentModal: React.FC<EnrollmentModalProps> = ({ isOpen, onClos
         ) : (
           /* Enrollment Success State */
           <div className="p-8 text-center space-y-5 animate-fadeIn">
-            <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-700 mx-auto flex items-center justify-center">
+            <div className="w-16 h-16 rounded-full bg-amber-100 text-amber-800 mx-auto flex items-center justify-center">
               <CheckCircle className="w-10 h-10" />
             </div>
 

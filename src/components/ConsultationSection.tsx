@@ -48,7 +48,7 @@ export const ConsultationSection: React.FC<ConsultationSectionProps> = ({
     <section id="consultation" className="py-6 sm:py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       
       {/* Comfortable & Balanced Vedic Sanctuary Container */}
-      <div className="bg-gradient-to-br from-[#FFFDF9] via-[#FFF9EE] to-[#F8EFE0] rounded-2xl sm:rounded-3xl p-5 sm:p-7 border border-amber-300/90 shadow-md">
+      <div className="bg-gradient-to-br from-[#FFFDF9] via-[#FAF4E8] to-[#F5ECE0] rounded-2xl sm:rounded-3xl p-5 sm:p-7 border border-[#DFC6A2] shadow-md">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
           
@@ -127,7 +127,7 @@ export const ConsultationSection: React.FC<ConsultationSectionProps> = ({
                 Dedicated 1-on-1 Time
               </span>
               <span className="flex items-center gap-1 bg-white/70 px-2.5 py-1 rounded-md border border-amber-200/70">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                <ShieldCheck className="w-3.5 h-3.5 text-amber-800" />
                 Actionable Remedies
               </span>
             </div>
@@ -147,7 +147,7 @@ export const ConsultationSection: React.FC<ConsultationSectionProps> = ({
                 className="cursor-pointer flex items-center justify-center gap-1.5 py-3 px-4 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 font-semibold text-xs sm:text-sm border border-amber-300 transition-all active:scale-98 shrink-0"
               >
                 <PhoneCall className="w-3.5 h-3.5 text-amber-700" />
-                <span>Call Helpline</span>
+                <span>Direct Call Support</span>
               </button>
             </div>
 

@@ -8,6 +8,9 @@ export const TestimonialsSection: React.FC = () => {
       
       {/* Section Header (Matches Screenshot) */}
       <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAF1E4] border border-[#E5CEAB] text-[#783908] text-xs font-bold uppercase tracking-wider mb-2">
+          <span>COMMUNITY EXPERIENCES</span>
+        </div>
         <h2 className="font-serif text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
           WHAT OUR STUDENTS SAY
         </h2>
@@ -21,13 +24,13 @@ export const TestimonialsSection: React.FC = () => {
         {TESTIMONIALS.map((t) => (
           <div
             key={t.id}
-            className="bg-white rounded-2xl p-6 border border-amber-200/80 shadow-sm hover:border-amber-400 hover:shadow-md transition-all flex flex-col justify-between relative"
+            className="bg-gradient-to-b from-[#FFFDF9] to-[#FAF5EC] rounded-2xl p-6 border border-[#E8DECE] shadow-2xs hover:border-[#CCA268] hover:shadow-md transition-all flex flex-col justify-between relative"
           >
             {/* Upper row: Avatar with initials + Name/Role + Quote icon */}
             <div className="space-y-4">
               <div className="flex items-start justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-amber-700 text-amber-100 font-serif font-bold text-sm flex items-center justify-center shadow-sm">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#7C2D12] to-[#541C0A] text-[#FEEAD8] font-serif font-bold text-sm flex items-center justify-center shadow-xs">
                     {t.initials}
                   </div>
                   <div>
@@ -39,7 +42,7 @@ export const TestimonialsSection: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                <Quote className="w-5 h-5 text-amber-300" />
+                <Quote className="w-5 h-5 text-[#D9822B]/35" />
               </div>
 
               {/* Review text */}
@@ -49,14 +52,14 @@ export const TestimonialsSection: React.FC = () => {
             </div>
 
             {/* Bottom Row: 5 Stars + Verified Student */}
-            <div className="pt-4 mt-4 border-t border-amber-100 flex items-center justify-between">
+            <div className="pt-4 mt-4 border-t border-[#EBE1CF] flex items-center justify-between">
               <div className="flex items-center gap-0.5">
                 {[...Array(t.rating)].map((_, i) => (
-                  <Star key={i} className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
+                  <Star key={i} className="w-3.5 h-3.5 text-[#D97706] fill-[#D97706]" />
                 ))}
               </div>
-              <div className="flex items-center gap-1 text-[11px] font-semibold text-gray-600">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+              <div className="flex items-center gap-1 text-[11px] font-semibold text-[#7C2D12]">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#9A4C1B]" />
                 <span>Verified Student</span>
               </div>
             </div>

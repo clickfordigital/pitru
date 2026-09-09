@@ -9,7 +9,7 @@ export const CertificateSection: React.FC<CertificateSectionProps> = ({ onEnroll
   return (
     <div id="certificate" className="max-w-5xl mx-auto">
       {/* 2-Column Card: Left Text & Highlights, Right Certificate Image */}
-      <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-[#FFFDF9] via-[#FAF4E8] to-[#F5ECE0] border border-amber-300/80 p-5 sm:p-7 lg:p-8 shadow-xl shadow-amber-950/5">
+      <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-[#FFFDF9] via-[#F8F2E4] to-[#EFE4D2] border-2 border-[#D9BE9B] p-5 sm:p-7 lg:p-8 shadow-xl shadow-amber-950/5">
         
         {/* Subtle Decorative Golden Accents */}
         <div className="absolute top-0 inset-x-12 h-[2px] bg-gradient-to-r from-transparent via-amber-400/80 to-transparent pointer-events-none" />
@@ -71,7 +71,7 @@ export const CertificateSection: React.FC<CertificateSectionProps> = ({ onEnroll
               </button>
 
               <p className="text-[11px] text-gray-600 flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-600 shrink-0" />
                 <span>Issued automatically after completing the 20-part curriculum.</span>
               </p>
             </div>
@@ -79,7 +79,7 @@ export const CertificateSection: React.FC<CertificateSectionProps> = ({ onEnroll
 
           {/* Right Column: Certificate Image Frame */}
           <div className="lg:col-span-6 flex justify-center">
-            <div className="relative w-full max-w-md lg:max-w-none rounded-xl bg-white p-2 sm:p-2.5 border border-amber-300/80 shadow-md shadow-amber-900/10 transition-transform duration-300 hover:shadow-xl hover:shadow-amber-900/15">
+            <div className="relative w-full max-w-md lg:max-w-none rounded-xl bg-white p-2 sm:p-2.5 border-2 border-[#D9BE9B] shadow-md shadow-amber-900/10 transition-transform duration-300 hover:shadow-xl hover:shadow-amber-900/15">
               {/* Gold Top Border Accent */}
               <div className="absolute top-0 inset-x-8 h-[2px] bg-gradient-to-r from-transparent via-amber-400 to-transparent pointer-events-none" />
               
@@ -96,7 +96,7 @@ export const CertificateSection: React.FC<CertificateSectionProps> = ({ onEnroll
               {/* Verified Badge Tag */}
               <div className="mt-2 flex items-center justify-between text-[10.5px] text-gray-600 px-1">
                 <span className="flex items-center gap-1 font-semibold text-amber-900">
-                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                  <ShieldCheck className="w-3.5 h-3.5 text-amber-800" />
                   Divine Astro Vastu Sciences LLP
                 </span>
                 <span className="text-gray-500 font-medium">Verified Format</span>

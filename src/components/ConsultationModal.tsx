@@ -123,7 +123,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
           </form>
         ) : (
           <div className="p-8 text-center space-y-4 animate-fadeIn">
-            <div className="w-14 h-14 rounded-full bg-emerald-100 text-emerald-700 mx-auto flex items-center justify-center">
+            <div className="w-14 h-14 rounded-full bg-amber-100 text-amber-800 mx-auto flex items-center justify-center">
               <CheckCircle className="w-8 h-8" />
             </div>
             <h4 className="font-serif text-xl font-bold text-gray-900">

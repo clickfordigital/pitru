@@ -66,7 +66,7 @@ export const FinalCtaBanner: React.FC<FinalCtaBannerProps> = ({
             </div>
 
             <div className="flex items-center gap-2 text-xs text-gray-700 font-medium">
-              <ShieldCheck className="w-4 h-4 text-emerald-700 shrink-0" />
+              <ShieldCheck className="w-4 h-4 text-amber-900 shrink-0" />
               <span>100% Shastric Authenticity • 1 Year Video Access • Verifiable Certificate</span>
             </div>
           </div>
